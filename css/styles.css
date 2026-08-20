@@ -7,41 +7,40 @@
 
 :root {
 
-    --bg: #f4f6f9;
-    --surface: #ffffff;
-    --surface-blue: #f5f9ff;
-    --surface-orange: #fff8f3;
+    --bg: #07090d;
+    --bg-light: #0b0f14;
 
-    --text: #101318;
-    --text-soft: #59616d;
-    --text-faint: #8a929d;
+    --surface: #10151c;
+    --surface-2: #141a22;
+    --surface-3: #1a222d;
 
-    --border: #e1e5eb;
-    --border-strong: #cfd5dd;
+    --text: #f4f6f8;
+    --text-soft: #aab3bf;
+    --text-faint: #697481;
 
-    --dark: #07090d;
-    --dark-2: #0e131a;
-    --dark-3: #171d26;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.15);
 
     --orange: #ff5c00;
     --orange-2: #ff7a18;
     --orange-3: #ffad73;
-    --orange-soft: #fff0e5;
 
     --blue: #0878f9;
     --blue-2: #0062cc;
     --blue-3: #55a5ff;
-    --blue-soft: #eaf3ff;
 
-    --green: #16a34a;
-    --green-soft: #eaf8ef;
+    --orange-soft: rgba(255, 92, 0, 0.10);
+    --blue-soft: rgba(8, 120, 249, 0.10);
+
+    --green: #22c55e;
+    --green-soft: rgba(34, 197, 94, 0.10);
 
     --gradient:
         linear-gradient(
             110deg,
             #ff5c00 0%,
             #ff7a18 28%,
-            #ff9b55 46%,
+            #ff9b55 45%,
             #0878f9 78%,
             #0057c7 100%
         );
@@ -49,30 +48,33 @@
     --gradient-reverse:
         linear-gradient(
             110deg,
-            #0057c7 0%,
-            #0878f9 30%,
-            #ff9b55 63%,
-            #ff7a18 82%,
-            #ff5c00 100%
+            #0057c7,
+            #0878f9,
+            #ff9b55,
+            #ff7a18,
+            #ff5c00
         );
 
     --shadow-small:
-        0 2px 8px rgba(0, 0, 0, .04);
+        0 4px 15px rgba(0, 0, 0, 0.25);
 
     --shadow-medium:
-        0 12px 38px rgba(0, 0, 0, .08);
+        0 14px 40px rgba(0, 0, 0, 0.35);
 
     --shadow-large:
-        0 28px 90px rgba(0, 0, 0, .11);
+        0 30px 90px rgba(0, 0, 0, 0.45);
 
     --orange-glow:
-        0 0 40px rgba(255, 92, 0, .18);
+        0 0 45px rgba(255, 92, 0, 0.18);
 
     --blue-glow:
-        0 0 40px rgba(8, 120, 249, .18);
+        0 0 45px rgba(8, 120, 249, 0.18);
 
-    --radius: 22px;
-    --radius-small: 12px;
+    --radius:
+        22px;
+
+    --radius-small:
+        12px;
 }
 
 
@@ -105,17 +107,17 @@ body {
 
         radial-gradient(
             circle at 0% 0%,
-            rgba(255, 92, 0, .09),
+            rgba(255, 92, 0, 0.10),
             transparent 25%
         ),
 
         radial-gradient(
             circle at 100% 0%,
-            rgba(8, 120, 249, .09),
+            rgba(8, 120, 249, 0.10),
             transparent 25%
         ),
 
-        var(--bg);
+        #07090d;
 
     overflow-x: hidden;
 }
@@ -127,7 +129,35 @@ body {
 
 
 /* =========================================================
-   BLUEPRINT BACKGROUND
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #05070a;
+}
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        linear-gradient(
+            var(--orange),
+            var(--blue)
+        );
+
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gradient);
+}
+
+
+/* =========================================================
+   GLOBAL GRID
 ========================================================= */
 
 main {
@@ -149,13 +179,13 @@ main::before {
     background-image:
 
         linear-gradient(
-            rgba(16, 19, 24, .025) 1px,
+            rgba(255,255,255,0.018) 1px,
             transparent 1px
         ),
 
         linear-gradient(
             90deg,
-            rgba(16, 19, 24, .025) 1px,
+            rgba(255,255,255,0.018) 1px,
             transparent 1px
         );
 
@@ -171,18 +201,18 @@ main::after {
 
     z-index: -1;
 
-    width: 400px;
-    height: 400px;
+    width: 450px;
+    height: 450px;
 
-    top: 35%;
-    left: -220px;
+    top: 40%;
+    left: -250px;
 
     border-radius: 50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(255, 92, 0, .055),
+            rgba(255, 92, 0, 0.06),
             transparent 70%
         );
 
@@ -191,35 +221,7 @@ main::after {
 
 
 /* =========================================================
-   SCROLLBAR
-========================================================= */
-
-::-webkit-scrollbar {
-    width: 9px;
-}
-
-::-webkit-scrollbar-track {
-    background: #080a0e;
-}
-
-::-webkit-scrollbar-thumb {
-
-    background:
-        linear-gradient(
-            var(--orange),
-            var(--blue)
-        );
-
-    border-radius: 999px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--gradient);
-}
-
-
-/* =========================================================
-   HEADER / HERO
+   HEADER
 ========================================================= */
 
 header {
@@ -229,11 +231,9 @@ header {
     min-height: 410px;
 
     display: flex;
-
     flex-direction: column;
 
     justify-content: center;
-
     align-items: center;
 
     padding: 90px 25px;
@@ -246,34 +246,34 @@ header {
 
         radial-gradient(
             circle at 14% 35%,
-            rgba(255, 92, 0, .28),
+            rgba(255, 92, 0, 0.28),
             transparent 29%
         ),
 
         radial-gradient(
             circle at 86% 28%,
-            rgba(8, 120, 249, .25),
+            rgba(8, 120, 249, 0.25),
             transparent 31%
         ),
 
         radial-gradient(
             circle at 50% 115%,
-            rgba(255, 122, 24, .13),
+            rgba(255, 122, 24, 0.13),
             transparent 40%
         ),
 
         linear-gradient(
             145deg,
-            #07090d,
-            #0c1118 52%,
-            #111923
+            #05070a,
+            #0b1017 52%,
+            #101820
         );
 
     overflow: hidden;
 }
 
 
-/* Moving engineering grid */
+/* Header grid */
 
 header::before {
 
@@ -296,7 +296,8 @@ header::before {
             transparent 1px
         );
 
-    background-size: 42px 42px;
+    background-size:
+        42px 42px;
 
     opacity: .8;
 
@@ -305,9 +306,7 @@ header::before {
 
     animation:
         gridMove
-        18s
-        linear
-        infinite;
+        18s linear infinite;
 
     mask-image:
         linear-gradient(
@@ -321,7 +320,7 @@ header::before {
 }
 
 
-/* Hero light */
+/* Header orb */
 
 header::after {
 
@@ -337,20 +336,19 @@ header::after {
     background:
         conic-gradient(
             from 0deg,
-            rgba(255, 92, 0, .12),
-            rgba(8, 120, 249, .1),
-            rgba(255, 92, 0, .12)
+            rgba(255,92,0,.14),
+            rgba(8,120,249,.10),
+            rgba(255,92,0,.14)
         );
 
-    filter: blur(90px);
+    filter:
+        blur(90px);
 
     opacity: .8;
 
     animation:
         heroOrb
-        10s
-        ease-in-out
-        infinite;
+        10s ease-in-out infinite;
 
     pointer-events: none;
 }
@@ -363,7 +361,6 @@ header::after {
 header h1 {
 
     position: relative;
-
     z-index: 3;
 
     margin: 0;
@@ -388,21 +385,19 @@ header h1 {
         linear-gradient(
             110deg,
             #ffffff 8%,
-            #ffb17d 27%,
+            #ffad73 27%,
             #ffffff 43%,
             #6bb4ff 70%,
             #ffffff 88%
         );
 
-    background-size: 260% 260%;
+    background-size:
+        260% 260%;
 
     -webkit-background-clip: text;
     background-clip: text;
 
     color: transparent;
-
-    text-shadow:
-        0 0 40px rgba(255, 255, 255, .04);
 
     animation:
 
@@ -412,20 +407,14 @@ header h1 {
         both,
 
         heroTextGradient
-        8s
-        ease-in-out
-        1s
-        infinite,
+        8s ease-in-out 1s infinite,
 
         heroShimmer
-        8s
-        ease-in-out
-        4s
-        infinite;
+        8s ease-in-out 4s infinite;
 }
 
 
-/* Hero title accent line */
+/* Title accent */
 
 header h1::after {
 
@@ -434,23 +423,20 @@ header h1::after {
     position: absolute;
 
     left: 50%;
-
     bottom: -20px;
 
     width: 140px;
-
     height: 3px;
 
     transform:
         translateX(-50%)
         scaleX(0);
 
-    transform-origin: center;
-
     background:
         var(--gradient);
 
-    border-radius: 999px;
+    border-radius:
+        999px;
 
     box-shadow:
         var(--orange-glow),
@@ -460,8 +446,7 @@ header h1::after {
         titleLineIn
         .9s
         cubic-bezier(.16,1,.3,1)
-        .7s
-        forwards;
+        .7s forwards;
 }
 
 
@@ -470,18 +455,21 @@ header h1::after {
 header p {
 
     position: relative;
-
     z-index: 3;
 
     max-width: 720px;
 
-    margin: 42px auto 0;
+    margin:
+        42px auto 0;
 
-    font-size: 16px;
+    color:
+        #aeb8c5;
 
-    line-height: 1.7;
+    font-size:
+        16px;
 
-    color: #b0b8c4;
+    line-height:
+        1.7;
 
     opacity: 0;
 
@@ -489,8 +477,7 @@ header p {
         subtitleIn
         .9s
         cubic-bezier(.16,1,.3,1)
-        .35s
-        forwards;
+        .35s forwards;
 }
 
 
@@ -511,9 +498,8 @@ nav ul {
 
     display: flex;
 
-    align-items: center;
-
     justify-content: center;
+    align-items: center;
 
     flex-wrap: wrap;
 
@@ -521,20 +507,21 @@ nav ul {
 
     margin: 0;
 
-    padding: 9px 16px;
+    padding:
+        9px 16px;
 
     list-style: none;
 
     background:
-        rgba(7, 9, 13, .91);
+        rgba(5, 7, 10, 0.92);
 
     border-bottom:
         1px solid
-        rgba(255,255,255,.09);
+        rgba(255,255,255,.08);
 
     box-shadow:
         0 8px 30px
-        rgba(0,0,0,.16);
+        rgba(0,0,0,.4);
 
     backdrop-filter:
         blur(20px);
@@ -544,7 +531,7 @@ nav ul {
 }
 
 
-/* Nav top energy line */
+/* Animated top line */
 
 nav::before {
 
@@ -553,11 +540,9 @@ nav::before {
     position: absolute;
 
     top: 0;
-
     left: 0;
 
     width: 100%;
-
     height: 2px;
 
     background:
@@ -568,9 +553,7 @@ nav::before {
 
     animation:
         navEnergy
-        6s
-        linear
-        infinite;
+        6s linear infinite;
 }
 
 
@@ -578,11 +561,9 @@ nav li {
 
     animation:
         navIn
-        .6s
-        cubic-bezier(.16,1,.3,1)
+        .6s cubic-bezier(.16,1,.3,1)
         both;
 }
-
 
 nav li:nth-child(1) {
     animation-delay: .10s;
@@ -613,22 +594,26 @@ nav li a {
 
     align-items: center;
 
-    padding: 10px 17px;
+    padding:
+        10px 17px;
 
-    color: #aeb6c2;
+    color:
+        #aab3bf;
 
     text-decoration: none;
 
-    font-size: 13px;
+    font-size:
+        13px;
 
-    font-weight: 600;
+    font-weight:
+        600;
 
-    border-radius: 9px;
+    border-radius:
+        9px;
 
     transition:
         .2s ease;
 }
-
 
 nav li a:hover {
 
@@ -637,7 +622,7 @@ nav li a:hover {
     background:
         linear-gradient(
             135deg,
-            rgba(255,92,0,.18),
+            rgba(255,92,0,.16),
             rgba(8,120,249,.12)
         );
 
@@ -652,7 +637,7 @@ nav li a:hover {
 }
 
 
-/* Animated underline */
+/* Nav underline */
 
 nav li a::after {
 
@@ -661,11 +646,9 @@ nav li a::after {
     position: absolute;
 
     left: 50%;
-
     bottom: 2px;
 
     width: 0;
-
     height: 2px;
 
     transform:
@@ -674,7 +657,8 @@ nav li a::after {
     background:
         var(--gradient);
 
-    border-radius: 999px;
+    border-radius:
+        999px;
 
     transition:
         width .25s ease;
@@ -697,7 +681,8 @@ main {
             1500px
         );
 
-    margin: 0 auto;
+    margin:
+        0 auto;
 }
 
 
@@ -713,14 +698,19 @@ section {
 
     max-width: none;
 
-    margin: 45px 0;
+    margin:
+        45px 0;
 
     padding:
-        68px
-        clamp(30px, 6vw, 95px);
+        68px clamp(30px, 6vw, 95px);
 
     background:
-        rgba(255,255,255,.965);
+
+        linear-gradient(
+            145deg,
+            rgba(18,23,30,.98),
+            rgba(11,16,22,.98)
+        );
 
     border:
         1px solid
@@ -732,17 +722,17 @@ section {
     box-shadow:
         var(--shadow-large);
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
     animation:
         sectionIn
-        .8s
-        cubic-bezier(.16,1,.3,1)
+        .8s cubic-bezier(.16,1,.3,1)
         both;
 }
 
 
-/* Animated top border */
+/* Animated top edge */
 
 section::before {
 
@@ -764,13 +754,11 @@ section::before {
 
     animation:
         borderFlow
-        7s
-        linear
-        infinite;
+        7s linear infinite;
 }
 
 
-/* Technical corner marker */
+/* Technical corner */
 
 section::after {
 
@@ -814,7 +802,7 @@ article {
 
 
 /* =========================================================
-   MAIN CONTENT TITLE
+   MAIN PAGE TITLE
 ========================================================= */
 
 article h1 {
@@ -843,16 +831,17 @@ article h1 {
     letter-spacing:
         -.055em;
 
+    color:
+        var(--text);
+
     border-bottom:
         1px solid
         var(--border);
 
     animation:
         pageTitleIn
-        .9s
-        cubic-bezier(.16,1,.3,1)
-        .15s
-        both;
+        .9s cubic-bezier(.16,1,.3,1)
+        .15s both;
 }
 
 
@@ -863,12 +852,14 @@ article h1::before {
     content:
         "DEVELOPER NOTEBOOK";
 
-    display: block;
+    display:
+        block;
 
-    margin-bottom: 13px;
+    margin-bottom:
+        13px;
 
     color:
-        var(--orange);
+        var(--orange-2);
 
     font-family:
         'JetBrains Mono',
@@ -882,16 +873,10 @@ article h1::before {
 
     letter-spacing:
         .2em;
-
-    animation:
-        labelIn
-        .7s
-        ease
-        both;
 }
 
 
-/* Animated blue/orange line */
+/* Animated title line */
 
 article h1::after {
 
@@ -900,11 +885,9 @@ article h1::after {
     position: absolute;
 
     bottom: -1px;
-
     left: 0;
 
     width: 180px;
-
     height: 2px;
 
     background:
@@ -915,9 +898,7 @@ article h1::after {
 
     animation:
         titleAccent
-        5s
-        ease-in-out
-        infinite;
+        5s ease-in-out infinite;
 }
 
 
@@ -954,11 +935,9 @@ article h3 {
 
     animation:
         headingIn
-        .7s
-        cubic-bezier(.16,1,.3,1)
+        .7s cubic-bezier(.16,1,.3,1)
         both;
 }
-
 
 article h3::before {
 
@@ -969,7 +948,8 @@ article h3::before {
 
     flex-shrink: 0;
 
-    border-radius: 2px;
+    border-radius:
+        2px;
 
     background:
         var(--orange);
@@ -979,10 +959,8 @@ article h3::before {
         var(--blue);
 
     transition:
-        transform .3s ease,
-        box-shadow .3s ease;
+        .3s ease;
 }
-
 
 article h3:hover::before {
 
@@ -991,8 +969,8 @@ article h3:hover::before {
         rotate(45deg);
 
     box-shadow:
-        0 0 12px
-        var(--orange);
+        0 0 14px
+        rgba(255,92,0,.6);
 }
 
 
@@ -1002,7 +980,8 @@ article h3:hover::before {
 
 article p {
 
-    max-width: 920px;
+    max-width:
+        920px;
 
     margin:
         0 0 20px;
@@ -1018,9 +997,7 @@ article p {
 
     animation:
         textIn
-        .8s
-        ease
-        both;
+        .8s ease both;
 }
 
 
@@ -1031,7 +1008,7 @@ article p {
 article a {
 
     color:
-        var(--blue);
+        var(--blue-3);
 
     font-weight:
         600;
@@ -1041,20 +1018,19 @@ article a {
 
     border-bottom:
         1px solid
-        rgba(8,120,249,.3);
+        rgba(85,165,255,.35);
 
     transition:
         .2s ease;
 }
 
-
 article a:hover {
 
     color:
-        var(--orange);
+        var(--orange-3);
 
     border-color:
-        var(--orange);
+        var(--orange-2);
 }
 
 
@@ -1072,14 +1048,14 @@ article code {
         4px 7px;
 
     color:
-        var(--blue-2);
+        var(--blue-3);
 
     background:
         var(--blue-soft);
 
     border:
         1px solid
-        #d5e7ff;
+        rgba(85,165,255,.18);
 
     border-radius:
         6px;
@@ -1091,21 +1067,20 @@ article code {
         .2s ease;
 }
 
-
 article code:hover {
 
     color:
-        var(--orange);
+        var(--orange-3);
 
     background:
         var(--orange-soft);
 
     border-color:
-        #ffd0b4;
+        rgba(255,122,24,.25);
 
     box-shadow:
-        0 0 15px
-        rgba(255,92,0,.1);
+        0 0 18px
+        rgba(255,92,0,.10);
 }
 
 
@@ -1126,7 +1101,6 @@ article ol {
         920px;
 }
 
-
 article li {
 
     margin-bottom:
@@ -1140,16 +1114,13 @@ article li {
 
     animation:
         listIn
-        .6s
-        ease
-        both;
+        .6s ease both;
 }
-
 
 article li::marker {
 
     color:
-        var(--orange);
+        var(--orange-2);
 
     font-weight:
         700;
@@ -1176,7 +1147,7 @@ article img {
 
     border:
         1px solid
-        var(--border);
+        var(--border-strong);
 
     border-radius:
         18px;
@@ -1186,17 +1157,12 @@ article img {
 
     animation:
         imageIn
-        1s
-        cubic-bezier(.16,1,.3,1)
-        .2s
-        both;
+        1s cubic-bezier(.16,1,.3,1)
+        .2s both;
 
     transition:
-        transform .35s ease,
-        box-shadow .35s ease,
-        border-color .35s ease;
+        .35s ease;
 }
-
 
 article img:hover {
 
@@ -1205,7 +1171,7 @@ article img:hover {
         scale(1.015);
 
     border-color:
-        rgba(255,92,0,.25);
+        rgba(255,92,0,.35);
 
     box-shadow:
         var(--orange-glow),
@@ -1231,9 +1197,9 @@ article img:hover {
     background:
 
         linear-gradient(
-            135deg,
-            rgba(255,255,255,.98),
-            rgba(246,249,253,.98)
+            145deg,
+            #151c25,
+            #0e141b
         );
 
     border:
@@ -1251,14 +1217,11 @@ article img:hover {
 
     animation:
         cardIn
-        .8s
-        cubic-bezier(.16,1,.3,1)
+        .8s cubic-bezier(.16,1,.3,1)
         both;
 
     transition:
-        transform .3s ease,
-        box-shadow .3s ease,
-        border-color .3s ease;
+        .3s ease;
 }
 
 
@@ -1294,7 +1257,7 @@ article img:hover {
 }
 
 
-/* Decorative corner */
+/* Technical corner */
 
 .projects::after {
 
@@ -1317,11 +1280,11 @@ article img:hover {
 
     border-top:
         1px solid
-        rgba(8,120,249,.4);
+        rgba(8,120,249,.5);
 
     border-right:
         1px solid
-        rgba(255,92,0,.5);
+        rgba(255,92,0,.6);
 }
 
 
@@ -1335,11 +1298,10 @@ article img:hover {
 
     box-shadow:
         0 20px 50px
-        rgba(0,0,0,.10),
+        rgba(0,0,0,.4),
         0 0 30px
-        rgba(8,120,249,.06);
+        rgba(8,120,249,.07);
 }
-
 
 .projects:hover::before {
 
@@ -1347,11 +1309,13 @@ article img:hover {
         0 100%;
 }
 
-
 .projects h2 {
 
     margin:
         0 0 10px;
+
+    color:
+        var(--text);
 
     font-family:
         'Sora',
@@ -1369,15 +1333,13 @@ article img:hover {
 
 
 /* =========================================================
-   STATUS STYLE
+   STATUS
 ========================================================= */
 
 .projects p strong {
-
     color:
         var(--text);
 }
-
 
 .projects p:last-child {
 
@@ -1401,13 +1363,13 @@ article img:hover {
 
     border:
         1px solid
-        #ffd5bd;
+        rgba(255,122,24,.22);
 
     border-radius:
         999px;
 
     color:
-        var(--orange-2);
+        var(--orange-3);
 
     font-family:
         'JetBrains Mono',
@@ -1443,8 +1405,8 @@ blockquote {
 
         linear-gradient(
             135deg,
-            var(--orange-soft),
-            var(--blue-soft)
+            rgba(255,92,0,.09),
+            rgba(8,120,249,.09)
         );
 
     border:
@@ -1463,13 +1425,9 @@ blockquote {
 
     animation:
         quoteIn
-        .8s
-        cubic-bezier(.16,1,.3,1)
+        .8s cubic-bezier(.16,1,.3,1)
         both;
 }
-
-
-/* Tiny quote accent */
 
 blockquote::before {
 
@@ -1522,28 +1480,24 @@ pre {
         #dce2ea;
 
     background:
-        #0b0e13;
+        #05070a;
 
     border:
         1px solid
-        rgba(255,255,255,.08);
+        rgba(255,255,255,.10);
 
     border-radius:
         14px;
 
     box-shadow:
-        0 18px 45px
-        rgba(0,0,0,.15);
+        0 20px 50px
+        rgba(0,0,0,.35);
 
     animation:
         codeIn
-        .8s
-        cubic-bezier(.16,1,.3,1)
+        .8s cubic-bezier(.16,1,.3,1)
         both;
 }
-
-
-/* Terminal dots */
 
 pre::before {
 
@@ -1570,7 +1524,6 @@ pre::before {
         3px;
 }
 
-
 pre::after {
 
     content:
@@ -1583,7 +1536,7 @@ pre::after {
         0;
 
     left:
-        0;
+        -100px;
 
     width:
         100px;
@@ -1596,11 +1549,8 @@ pre::after {
 
     animation:
         codeScan
-        4s
-        linear
-        infinite;
+        4s linear infinite;
 }
-
 
 pre code {
 
@@ -1625,6 +1575,31 @@ pre code {
 
     line-height:
         1.75;
+}
+
+
+/* =========================================================
+   TERMINAL CURSOR
+========================================================= */
+
+article h1 + p::after {
+
+    content:
+        "▌";
+
+    margin-left:
+        4px;
+
+    color:
+        var(--orange-2);
+
+    font-family:
+        'JetBrains Mono',
+        monospace;
+
+    animation:
+        cursorBlink
+        1s steps(1) infinite;
 }
 
 
@@ -1660,7 +1635,6 @@ footer {
         hidden;
 }
 
-
 footer::before {
 
     content:
@@ -1689,36 +1663,74 @@ footer::before {
 
     animation:
         footerFlow
-        6s
-        linear
-        infinite;
+        6s linear infinite;
 }
 
 
 /* =========================================================
-   TERMINAL CURSOR
+   BUTTONS
 ========================================================= */
 
-article h1 + p::after {
+button,
+.button {
 
-    content:
-        "▌";
+    display:
+        inline-flex;
 
-    margin-left:
-        4px;
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        11px 19px;
 
     color:
-        var(--orange);
+        white;
+
+    background:
+        var(--gradient);
+
+    border:
+        none;
+
+    border-radius:
+        9px;
 
     font-family:
-        'JetBrains Mono',
-        monospace;
+        'DM Sans',
+        sans-serif;
 
-    animation:
-        cursorBlink
-        1s
-        steps(1)
-        infinite;
+    font-size:
+        13px;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+        0 8px 22px
+        rgba(8,120,249,.18);
+
+    transition:
+        .2s ease;
+}
+
+button:hover,
+.button:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        var(--orange-glow),
+        var(--blue-glow);
+
+    filter:
+        brightness(1.08);
 }
 
 
@@ -1777,7 +1789,6 @@ select:focus-visible {
     }
 }
 
-
 @keyframes heroTextGradient {
 
     0% {
@@ -1795,7 +1806,6 @@ select:focus-visible {
             0% 50%;
     }
 }
-
 
 @keyframes heroShimmer {
 
@@ -1817,7 +1827,6 @@ select:focus-visible {
     }
 }
 
-
 @keyframes titleLineIn {
 
     from {
@@ -1836,7 +1845,6 @@ select:focus-visible {
         opacity: 1;
     }
 }
-
 
 @keyframes subtitleIn {
 
@@ -1861,7 +1869,6 @@ select:focus-visible {
     }
 }
 
-
 @keyframes gridMove {
 
     from {
@@ -1876,7 +1883,6 @@ select:focus-visible {
             rotate(-1deg);
     }
 }
-
 
 @keyframes heroOrb {
 
@@ -1900,7 +1906,6 @@ select:focus-visible {
     }
 }
 
-
 @keyframes navEnergy {
 
     from {
@@ -1913,7 +1918,6 @@ select:focus-visible {
             200% 50%;
     }
 }
-
 
 @keyframes navIn {
 
@@ -1932,7 +1936,6 @@ select:focus-visible {
     }
 }
 
-
 @keyframes sectionIn {
 
     from {
@@ -1949,7 +1952,6 @@ select:focus-visible {
             translateY(0);
     }
 }
-
 
 @keyframes pageTitleIn {
 
@@ -1976,25 +1978,6 @@ select:focus-visible {
     }
 }
 
-
-@keyframes labelIn {
-
-    from {
-        opacity: 0;
-
-        transform:
-            translateX(-15px);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            translateX(0);
-    }
-}
-
-
 @keyframes headingIn {
 
     from {
@@ -2011,7 +1994,6 @@ select:focus-visible {
             translateX(0);
     }
 }
-
 
 @keyframes textIn {
 
@@ -2030,7 +2012,6 @@ select:focus-visible {
     }
 }
 
-
 @keyframes listIn {
 
     from {
@@ -2047,7 +2028,6 @@ select:focus-visible {
             translateX(0);
     }
 }
-
 
 @keyframes imageIn {
 
@@ -2074,7 +2054,6 @@ select:focus-visible {
     }
 }
 
-
 @keyframes cardIn {
 
     from {
@@ -2094,7 +2073,6 @@ select:focus-visible {
     }
 }
 
-
 @keyframes quoteIn {
 
     from {
@@ -2112,7 +2090,6 @@ select:focus-visible {
     }
 }
 
-
 @keyframes codeIn {
 
     from {
@@ -2129,7 +2106,6 @@ select:focus-visible {
             translateY(0);
     }
 }
-
 
 @keyframes codeScan {
 
@@ -2160,7 +2136,6 @@ select:focus-visible {
     }
 }
 
-
 @keyframes borderFlow {
 
     0% {
@@ -2178,7 +2153,6 @@ select:focus-visible {
             0% 50%;
     }
 }
-
 
 @keyframes titleAccent {
 
@@ -2198,7 +2172,6 @@ select:focus-visible {
     }
 }
 
-
 @keyframes footerFlow {
 
     from {
@@ -2212,19 +2185,16 @@ select:focus-visible {
     }
 }
 
-
 @keyframes cursorBlink {
 
     0%,
     45% {
-        opacity:
-            1;
+        opacity: 1;
     }
 
     46%,
     100% {
-        opacity:
-            0;
+        opacity: 0;
     }
 }
 
