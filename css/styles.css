@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap');
 
 
 /* =========================================================
@@ -28,9 +28,6 @@
     --blue-light: #5aa7ff;
     --blue-soft: #eaf3ff;
 
-    --green: #16a34a;
-    --green-soft: #eaf8ef;
-
     --gradient:
         linear-gradient(
             120deg,
@@ -49,7 +46,6 @@
         0 25px 80px rgba(0,0,0,.10);
 
     --radius: 22px;
-    --radius-small: 12px;
 }
 
 
@@ -71,8 +67,9 @@ body {
 
     min-height: 100vh;
 
+    /* DM Sans = clean body text */
     font-family:
-        'Inter',
+        'DM Sans',
         Arial,
         sans-serif;
 
@@ -97,11 +94,8 @@ body {
     overflow-x: hidden;
 }
 
-
 ::selection {
-
     background: var(--orange);
-
     color: white;
 }
 
@@ -111,25 +105,21 @@ body {
 ========================================================= */
 
 ::-webkit-scrollbar {
-
     width: 9px;
 }
 
 ::-webkit-scrollbar-track {
-
     background: #090b0f;
 }
 
 ::-webkit-scrollbar-thumb {
-
     background: var(--gradient);
-
     border-radius: 999px;
 }
 
 
 /* =========================================================
-   HEADER / HERO
+   HERO
 ========================================================= */
 
 header {
@@ -202,7 +192,6 @@ header::before {
     background-size: 40px 40px;
 
     mask-image:
-
         linear-gradient(
             to bottom,
             black,
@@ -213,7 +202,7 @@ header::before {
 }
 
 
-/* Header glow */
+/* Glow */
 
 header::after {
 
@@ -228,7 +217,6 @@ header::after {
     border-radius: 50%;
 
     background:
-
         linear-gradient(
             90deg,
             var(--orange),
@@ -242,9 +230,16 @@ header::after {
     pointer-events: none;
 
     animation:
-        headerGlow 8s ease-in-out infinite;
+        headerGlow
+        8s
+        ease-in-out
+        infinite;
 }
 
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
 
 header h1 {
 
@@ -255,6 +250,12 @@ header h1 {
     margin: 0;
 
     max-width: 1100px;
+
+    /* Sora = distinctive modern headline */
+
+    font-family:
+        'Sora',
+        sans-serif;
 
     font-size:
         clamp(44px, 8vw, 78px);
@@ -270,7 +271,7 @@ header h1 {
         linear-gradient(
             120deg,
             #ffffff 20%,
-            #9da8b7 45%,
+            #aab4c2 45%,
             #ffffff 65%,
             #0878f9 85%,
             #ff6b1a
@@ -279,7 +280,6 @@ header h1 {
     background-size: 250% 250%;
 
     -webkit-background-clip: text;
-
     background-clip: text;
 
     color: transparent;
@@ -299,6 +299,8 @@ header h1 {
 }
 
 
+/* Hero subtitle */
+
 header p {
 
     position: relative;
@@ -308,6 +310,10 @@ header p {
     max-width: 700px;
 
     margin: 24px auto 0;
+
+    font-family:
+        'DM Sans',
+        sans-serif;
 
     color: #aeb6c2;
 
@@ -340,7 +346,6 @@ nav {
     z-index: 1000;
 }
 
-
 nav ul {
 
     display: flex;
@@ -372,11 +377,7 @@ nav ul {
 
     backdrop-filter:
         blur(18px);
-
-    -webkit-backdrop-filter:
-        blur(18px);
 }
-
 
 nav li {
 
@@ -386,7 +387,6 @@ nav li {
         cubic-bezier(.16,1,.3,1)
         both;
 }
-
 
 nav li:nth-child(1) {
     animation-delay: .1s;
@@ -408,7 +408,6 @@ nav li:nth-child(5) {
     animation-delay: .3s;
 }
 
-
 nav li a {
 
     position: relative;
@@ -421,6 +420,10 @@ nav li a {
 
     text-decoration: none;
 
+    font-family:
+        'DM Sans',
+        sans-serif;
+
     font-size: 13px;
 
     font-weight: 600;
@@ -429,7 +432,6 @@ nav li a {
 
     transition: .2s ease;
 }
-
 
 nav li a:hover {
 
@@ -440,39 +442,6 @@ nav li a:hover {
 
     transform:
         translateY(-2px);
-}
-
-
-nav li a::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-
-    bottom: 3px;
-
-    width: 0;
-
-    height: 2px;
-
-    transform:
-        translateX(-50%);
-
-    background:
-        var(--gradient);
-
-    border-radius: 999px;
-
-    transition:
-        width .2s ease;
-}
-
-
-nav li a:hover::after {
-
-    width: 25px;
 }
 
 
@@ -535,8 +504,6 @@ section {
 }
 
 
-/* Top gradient */
-
 section::before {
 
     content: "";
@@ -544,7 +511,6 @@ section::before {
     position: absolute;
 
     top: 0;
-
     left: 0;
 
     width: 100%;
@@ -553,36 +519,6 @@ section::before {
 
     background:
         var(--gradient);
-}
-
-
-/* Corner glow */
-
-section::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 300px;
-
-    height: 300px;
-
-    top: -150px;
-
-    right: -100px;
-
-    border-radius: 50%;
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(8,120,249,.07),
-            transparent 70%
-        );
-
-    pointer-events: none;
 }
 
 
@@ -602,7 +538,7 @@ article {
 
 
 /* =========================================================
-   MAIN TITLE
+   MAIN TITLES
 ========================================================= */
 
 article h1 {
@@ -614,6 +550,12 @@ article h1 {
 
     padding:
         0 0 20px;
+
+    /* Sora makes these stand out */
+
+    font-family:
+        'Sora',
+        sans-serif;
 
     font-size:
         clamp(32px,5vw,48px);
@@ -646,12 +588,14 @@ article h1::before {
 
     margin-bottom: 12px;
 
-    color:
-        var(--orange);
+    /* JetBrains Mono = technical label */
 
     font-family:
         'JetBrains Mono',
         monospace;
+
+    color:
+        var(--orange);
 
     font-size: 10px;
 
@@ -682,14 +626,19 @@ article h3 {
     margin:
         42px 0 14px;
 
+    font-family:
+        'Sora',
+        sans-serif;
+
     color:
         var(--text);
 
-    font-size: 19px;
+    font-size: 18px;
 
-    font-weight: 700;
+    font-weight: 600;
 
-    letter-spacing: -.025em;
+    letter-spacing:
+        -.025em;
 
     animation:
         headingIn
@@ -732,7 +681,7 @@ article h3:hover::before {
 
 
 /* =========================================================
-   TEXT
+   BODY TEXT
 ========================================================= */
 
 article p {
@@ -742,6 +691,10 @@ article p {
 
     max-width:
         900px;
+
+    font-family:
+        'DM Sans',
+        sans-serif;
 
     color:
         var(--text-soft);
@@ -761,41 +714,7 @@ article p {
 
 
 /* =========================================================
-   LINKS
-========================================================= */
-
-article a {
-
-    color:
-        var(--blue);
-
-    font-weight:
-        600;
-
-    text-decoration:
-        none;
-
-    border-bottom:
-        1px solid
-        rgba(8,120,249,.3);
-
-    transition:
-        .2s ease;
-}
-
-
-article a:hover {
-
-    color:
-        var(--orange);
-
-    border-color:
-        var(--orange);
-}
-
-
-/* =========================================================
-   INLINE CODE
+   CODE
 ========================================================= */
 
 article code {
@@ -830,11 +749,11 @@ article code {
 
 article code:hover {
 
-    background:
-        var(--orange-soft);
-
     color:
         var(--orange);
+
+    background:
+        var(--orange-soft);
 
     border-color:
         #ffd2bb;
@@ -853,16 +772,16 @@ article ol {
 
     padding-left:
         28px;
-
-    max-width:
-        900px;
 }
-
 
 article li {
 
     margin-bottom:
         10px;
+
+    font-family:
+        'DM Sans',
+        sans-serif;
 
     color:
         var(--text-soft);
@@ -876,7 +795,6 @@ article li {
         ease
         both;
 }
-
 
 article li::marker {
 
@@ -928,7 +846,6 @@ article img {
         box-shadow .35s ease;
 }
 
-
 article img:hover {
 
     transform:
@@ -957,7 +874,6 @@ article img:hover {
         28px 30px;
 
     background:
-
         linear-gradient(
             135deg,
             #ffffff,
@@ -985,28 +901,7 @@ article img:hover {
 
     transition:
         transform .3s ease,
-        box-shadow .3s ease,
-        border-color .3s ease;
-}
-
-
-.projects::before {
-
-    content: "";
-
-    position:
-        absolute;
-
-    left: 0;
-
-    top: 0;
-
-    width: 4px;
-
-    height: 100%;
-
-    background:
-        var(--gradient);
+        box-shadow .3s ease;
 }
 
 
@@ -1015,24 +910,24 @@ article img:hover {
     transform:
         translateY(-7px);
 
-    border-color:
-        #cfd5dd;
-
     box-shadow:
         var(--shadow-medium);
 }
 
 
-.projects h2 {
+.projects p {
 
-    margin:
-        0 0 10px;
+    margin: 0;
 
-    font-size:
-        23px;
+    font-family:
+        'Sora',
+        sans-serif;
 
-    letter-spacing:
-        -.035em;
+    font-weight:
+        600;
+
+    color:
+        var(--text);
 }
 
 
@@ -1093,6 +988,10 @@ pre::before {
     color:
         #59616d;
 
+    font-family:
+        'JetBrains Mono',
+        monospace;
+
     font-size:
         11px;
 
@@ -1103,146 +1002,23 @@ pre::before {
 
 pre code {
 
-    padding:
-        0;
+    padding: 0;
 
-    color:
-        inherit;
+    color: inherit;
 
-    background:
-        transparent;
+    background: transparent;
 
-    border:
-        none;
-
-    font-size:
-        13px;
-
-    line-height:
-        1.75;
-}
-
-
-/* =========================================================
-   BLOCKQUOTE
-========================================================= */
-
-blockquote {
-
-    max-width:
-        900px;
-
-    margin:
-        35px 0;
-
-    padding:
-        22px 25px;
-
-    color:
-        var(--text-soft);
-
-    background:
-
-        linear-gradient(
-            135deg,
-            var(--orange-soft),
-            var(--blue-soft)
-        );
-
-    border:
-        1px solid
-        var(--border);
-
-    border-left:
-        4px solid
-        var(--orange);
-
-    border-radius:
-        0 14px 14px 0;
-
-    line-height:
-        1.75;
-
-    animation:
-        quoteIn
-        .8s
-        cubic-bezier(.16,1,.3,1)
-        both;
-}
-
-
-/* =========================================================
-   BUTTONS
-========================================================= */
-
-button,
-.button {
-
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    padding:
-        11px 19px;
-
-    color:
-        white;
-
-    background:
-        var(--gradient);
-
-    border:
-        none;
-
-    border-radius:
-        9px;
+    border: none;
 
     font-family:
-        inherit;
+        'JetBrains Mono',
+        monospace;
 
     font-size:
         13px;
 
-    font-weight:
-        700;
-
-    cursor:
-        pointer;
-
-    box-shadow:
-        0 8px 22px
-        rgba(8,120,249,.2);
-
-    transition:
-        .2s ease;
-}
-
-
-button:hover,
-.button:hover {
-
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 13px 30px
-        rgba(8,120,249,.28);
-
-    filter:
-        brightness(1.06);
-}
-
-
-button:active,
-.button:active {
-
-    transform:
-        translateY(0);
+    line-height:
+        1.75;
 }
 
 
@@ -1266,6 +1042,10 @@ footer {
 
     color:
         var(--text-faint);
+
+    font-family:
+        'DM Sans',
+        sans-serif;
 
     font-size:
         12px;
@@ -1310,33 +1090,19 @@ footer::before {
 @keyframes heroTitleIn {
 
     0% {
-
         opacity: 0;
-
         transform:
             translateY(45px)
             scale(.96);
-
         filter:
             blur(10px);
     }
 
-    60% {
-
-        opacity: 1;
-
-        filter:
-            blur(0);
-    }
-
     100% {
-
         opacity: 1;
-
         transform:
             translateY(0)
             scale(1);
-
         filter:
             blur(0);
     }
@@ -1365,23 +1131,17 @@ footer::before {
 @keyframes subtitleIn {
 
     from {
-
         opacity: 0;
-
         transform:
             translateY(20px);
-
         filter:
             blur(5px);
     }
 
     to {
-
         opacity: 1;
-
         transform:
             translateY(0);
-
         filter:
             blur(0);
     }
@@ -1391,17 +1151,13 @@ footer::before {
 @keyframes sectionIn {
 
     from {
-
         opacity: 0;
-
         transform:
             translateY(25px);
     }
 
     to {
-
         opacity: 1;
-
         transform:
             translateY(0);
     }
@@ -1411,25 +1167,19 @@ footer::before {
 @keyframes pageTitleIn {
 
     0% {
-
         opacity: 0;
-
         transform:
             translateY(35px)
             scale(.97);
-
         filter:
             blur(8px);
     }
 
     100% {
-
         opacity: 1;
-
         transform:
             translateY(0)
             scale(1);
-
         filter:
             blur(0);
     }
@@ -1439,17 +1189,13 @@ footer::before {
 @keyframes labelIn {
 
     from {
-
         opacity: 0;
-
         transform:
             translateX(-15px);
     }
 
     to {
-
         opacity: 1;
-
         transform:
             translateX(0);
     }
@@ -1459,17 +1205,13 @@ footer::before {
 @keyframes headingIn {
 
     from {
-
         opacity: 0;
-
         transform:
             translateX(-25px);
     }
 
     to {
-
         opacity: 1;
-
         transform:
             translateX(0);
     }
@@ -1479,17 +1221,13 @@ footer::before {
 @keyframes textIn {
 
     from {
-
         opacity: 0;
-
         transform:
             translateY(12px);
     }
 
     to {
-
         opacity: 1;
-
         transform:
             translateY(0);
     }
@@ -1499,25 +1237,19 @@ footer::before {
 @keyframes imageIn {
 
     from {
-
         opacity: 0;
-
         transform:
             translateY(25px)
             scale(.96);
-
         filter:
             blur(6px);
     }
 
     to {
-
         opacity: 1;
-
         transform:
             translateY(0)
             scale(1);
-
         filter:
             blur(0);
     }
@@ -1527,18 +1259,14 @@ footer::before {
 @keyframes cardIn {
 
     from {
-
         opacity: 0;
-
         transform:
             translateY(25px)
             scale(.98);
     }
 
     to {
-
         opacity: 1;
-
         transform:
             translateY(0)
             scale(1);
@@ -1549,59 +1277,15 @@ footer::before {
 @keyframes codeIn {
 
     from {
-
         opacity: 0;
-
         transform:
             translateY(20px);
     }
 
     to {
-
         opacity: 1;
-
         transform:
             translateY(0);
-    }
-}
-
-
-@keyframes quoteIn {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateX(-20px);
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateX(0);
-    }
-}
-
-
-@keyframes listIn {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateX(-10px);
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateX(0);
     }
 }
 
@@ -1609,17 +1293,13 @@ footer::before {
 @keyframes navIn {
 
     from {
-
         opacity: 0;
-
         transform:
             translateY(-8px);
     }
 
     to {
-
         opacity: 1;
-
         transform:
             translateY(0);
     }
@@ -1628,62 +1308,18 @@ footer::before {
 
 @keyframes headerGlow {
 
-    0%,
-    100% {
-
+    0%, 100% {
         transform:
             scale(1);
-
         opacity:
             .07;
     }
 
     50% {
-
         transform:
             scale(1.15);
-
         opacity:
             .12;
-    }
-}
-
-
-/* =========================================================
-   ACCESSIBILITY
-========================================================= */
-
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible {
-
-    outline:
-        3px solid
-        rgba(8,120,249,.35);
-
-    outline-offset:
-        4px;
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 900px) {
-
-    main {
-
-        width:
-            calc(100% - 24px);
-    }
-
-    section {
-
-        padding:
-            45px 35px;
     }
 }
 
@@ -1771,56 +1407,6 @@ select:focus-visible {
         line-height:
             1.75;
     }
-
-    article img {
-
-        margin-left:
-            auto;
-
-        margin-right:
-            auto;
-    }
-
-    .projects {
-
-        padding:
-            24px 22px;
-    }
-
-    pre {
-
-        padding:
-            18px;
-    }
-}
-
-
-/* =========================================================
-   VERY SMALL SCREENS
-========================================================= */
-
-@media (max-width: 420px) {
-
-    header h1 {
-
-        font-size:
-            37px;
-    }
-
-    nav li a {
-
-        padding:
-            7px 8px;
-
-        font-size:
-            10px;
-    }
-
-    section {
-
-        padding:
-            27px 17px;
-    }
 }
 
 
@@ -1831,7 +1417,6 @@ select:focus-visible {
 @media (prefers-reduced-motion: reduce) {
 
     html {
-
         scroll-behavior:
             auto;
     }
