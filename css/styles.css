@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
+
 /* =========================================================
    DESIGN TOKENS
 ========================================================= */
 
 :root {
+
     --bg: #f5f6f8;
     --surface: #ffffff;
     --surface-2: #f0f2f5;
@@ -38,13 +40,13 @@
         );
 
     --shadow-small:
-        0 2px 8px rgba(0, 0, 0, .04);
+        0 2px 8px rgba(0,0,0,.04);
 
     --shadow-medium:
-        0 10px 35px rgba(0, 0, 0, .07);
+        0 10px 35px rgba(0,0,0,.07);
 
     --shadow-large:
-        0 25px 80px rgba(0, 0, 0, .10);
+        0 25px 80px rgba(0,0,0,.10);
 
     --radius: 22px;
     --radius-small: 12px;
@@ -64,7 +66,9 @@ html {
 }
 
 body {
+
     margin: 0;
+
     min-height: 100vh;
 
     font-family:
@@ -75,23 +79,29 @@ body {
     color: var(--text);
 
     background:
+
         radial-gradient(
             circle at 0% 0%,
-            rgba(255, 107, 26, .08),
+            rgba(255,107,26,.08),
             transparent 28%
         ),
+
         radial-gradient(
             circle at 100% 0%,
-            rgba(8, 120, 249, .08),
+            rgba(8,120,249,.08),
             transparent 28%
         ),
+
         var(--bg);
 
     overflow-x: hidden;
 }
 
+
 ::selection {
+
     background: var(--orange);
+
     color: white;
 }
 
@@ -101,31 +111,39 @@ body {
 ========================================================= */
 
 ::-webkit-scrollbar {
+
     width: 9px;
 }
 
 ::-webkit-scrollbar-track {
+
     background: #090b0f;
 }
 
 ::-webkit-scrollbar-thumb {
+
     background: var(--gradient);
+
     border-radius: 999px;
 }
 
 
 /* =========================================================
-   HEADER
+   HEADER / HERO
 ========================================================= */
 
 header {
+
     position: relative;
 
     min-height: 390px;
 
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
+
     align-items: center;
 
     padding: 90px 25px;
@@ -135,16 +153,19 @@ header {
     color: white;
 
     background:
+
         radial-gradient(
             circle at 15% 25%,
-            rgba(255, 107, 26, .22),
+            rgba(255,107,26,.22),
             transparent 30%
         ),
+
         radial-gradient(
             circle at 85% 25%,
-            rgba(8, 120, 249, .22),
+            rgba(8,120,249,.22),
             transparent 30%
         ),
+
         linear-gradient(
             145deg,
             #07090d,
@@ -158,16 +179,20 @@ header {
 /* Engineering grid */
 
 header::before {
+
     content: "";
 
     position: absolute;
+
     inset: 0;
 
     background-image:
+
         linear-gradient(
             rgba(255,255,255,.035) 1px,
             transparent 1px
         ),
+
         linear-gradient(
             90deg,
             rgba(255,255,255,.035) 1px,
@@ -177,6 +202,7 @@ header::before {
     background-size: 40px 40px;
 
     mask-image:
+
         linear-gradient(
             to bottom,
             black,
@@ -187,19 +213,22 @@ header::before {
 }
 
 
-/* Glow */
+/* Header glow */
 
 header::after {
+
     content: "";
 
     position: absolute;
 
     width: 550px;
+
     height: 550px;
 
     border-radius: 50%;
 
     background:
+
         linear-gradient(
             90deg,
             var(--orange),
@@ -211,11 +240,16 @@ header::after {
     filter: blur(110px);
 
     pointer-events: none;
+
+    animation:
+        headerGlow 8s ease-in-out infinite;
 }
 
 
 header h1 {
+
     position: relative;
+
     z-index: 2;
 
     margin: 0;
@@ -232,25 +266,43 @@ header h1 {
     letter-spacing: -.065em;
 
     background:
+
         linear-gradient(
             120deg,
-            #ffffff 25%,
-            #bfc7d3 70%,
-            #ffffff
+            #ffffff 20%,
+            #9da8b7 45%,
+            #ffffff 65%,
+            #0878f9 85%,
+            #ff6b1a
         );
 
+    background-size: 250% 250%;
+
     -webkit-background-clip: text;
+
     background-clip: text;
 
     color: transparent;
 
     animation:
-        heroIn .7s ease both;
+
+        heroTitleIn
+        1s
+        cubic-bezier(.16,1,.3,1)
+        both,
+
+        gradientMove
+        7s
+        ease-in-out
+        1s
+        infinite;
 }
 
 
 header p {
+
     position: relative;
+
     z-index: 2;
 
     max-width: 700px;
@@ -263,8 +315,15 @@ header p {
 
     line-height: 1.7;
 
+    opacity: 0;
+
     animation:
-        heroIn .7s .1s ease both;
+
+        subtitleIn
+        .9s
+        cubic-bezier(.16,1,.3,1)
+        .35s
+        forwards;
 }
 
 
@@ -273,16 +332,21 @@ header p {
 ========================================================= */
 
 nav {
+
     position: sticky;
+
     top: 0;
 
     z-index: 1000;
 }
 
+
 nav ul {
+
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     flex-wrap: wrap;
@@ -290,12 +354,13 @@ nav ul {
     gap: 5px;
 
     margin: 0;
+
     padding: 9px 16px;
 
     list-style: none;
 
     background:
-        rgba(9, 11, 15, .90);
+        rgba(9,11,15,.90);
 
     border-bottom:
         1px solid
@@ -305,11 +370,47 @@ nav ul {
         0 8px 30px
         rgba(0,0,0,.14);
 
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
 }
 
+
+nav li {
+
+    animation:
+        navIn
+        .6s
+        cubic-bezier(.16,1,.3,1)
+        both;
+}
+
+
+nav li:nth-child(1) {
+    animation-delay: .1s;
+}
+
+nav li:nth-child(2) {
+    animation-delay: .15s;
+}
+
+nav li:nth-child(3) {
+    animation-delay: .2s;
+}
+
+nav li:nth-child(4) {
+    animation-delay: .25s;
+}
+
+nav li:nth-child(5) {
+    animation-delay: .3s;
+}
+
+
 nav li a {
+
     position: relative;
 
     display: inline-flex;
@@ -321,6 +422,7 @@ nav li a {
     text-decoration: none;
 
     font-size: 13px;
+
     font-weight: 600;
 
     border-radius: 9px;
@@ -328,38 +430,48 @@ nav li a {
     transition: .2s ease;
 }
 
+
 nav li a:hover {
+
     color: white;
 
     background:
         rgba(255,255,255,.09);
 
     transform:
-        translateY(-1px);
+        translateY(-2px);
 }
 
+
 nav li a::after {
+
     content: "";
 
     position: absolute;
 
     left: 50%;
+
     bottom: 3px;
 
     width: 0;
+
     height: 2px;
 
     transform:
         translateX(-50%);
 
-    background: var(--gradient);
+    background:
+        var(--gradient);
 
     border-radius: 999px;
 
-    transition: width .2s ease;
+    transition:
+        width .2s ease;
 }
 
+
 nav li a:hover::after {
+
     width: 25px;
 }
 
@@ -369,28 +481,36 @@ nav li a:hover::after {
 ========================================================= */
 
 main {
-    width: min(
-        calc(100% - 40px),
-        1500px
-    );
 
-    margin: 0 auto;
+    width:
+        min(
+            calc(100% - 40px),
+            1500px
+        );
+
+    margin:
+        0 auto;
 }
 
 
 /* =========================================================
-   SECTION — FULL WIDTH CONTENT
+   SECTION
 ========================================================= */
 
 section {
+
     position: relative;
 
     width: 100%;
+
     max-width: none;
 
-    margin: 45px 0;
+    margin:
+        45px 0;
 
-    padding: 65px clamp(30px, 6vw, 90px);
+    padding:
+        65px
+        clamp(30px,6vw,90px);
 
     background:
         rgba(255,255,255,.96);
@@ -399,48 +519,63 @@ section {
         1px solid
         var(--border);
 
-    border-radius: var(--radius);
+    border-radius:
+        var(--radius);
 
     box-shadow:
         var(--shadow-large);
 
     overflow: hidden;
+
+    animation:
+        sectionIn
+        .8s
+        cubic-bezier(.16,1,.3,1)
+        both;
 }
 
 
-/* Gradient top line */
+/* Top gradient */
 
 section::before {
+
     content: "";
 
     position: absolute;
 
     top: 0;
+
     left: 0;
 
     width: 100%;
+
     height: 4px;
 
-    background: var(--gradient);
+    background:
+        var(--gradient);
 }
 
 
-/* Subtle corner glow */
+/* Corner glow */
 
 section::after {
+
     content: "";
 
     position: absolute;
 
     width: 300px;
+
     height: 300px;
 
     top: -150px;
+
     right: -100px;
 
     border-radius: 50%;
 
     background:
+
         radial-gradient(
             circle,
             rgba(8,120,249,.07),
@@ -456,26 +591,32 @@ section::after {
 ========================================================= */
 
 article {
+
     width: 100%;
+
     max-width: 1200px;
 
-    margin: 0 auto;
+    margin:
+        0 auto;
 }
 
 
 /* =========================================================
-   ARTICLE TITLES
+   MAIN TITLE
 ========================================================= */
 
 article h1 {
+
     position: relative;
 
-    margin: 0 0 35px;
+    margin:
+        0 0 35px;
 
-    padding-bottom: 20px;
+    padding:
+        0 0 20px;
 
     font-size:
-        clamp(32px, 5vw, 48px);
+        clamp(32px,5vw,48px);
 
     font-weight: 800;
 
@@ -486,16 +627,27 @@ article h1 {
     border-bottom:
         1px solid
         var(--border);
+
+    animation:
+        pageTitleIn
+        .9s
+        cubic-bezier(.16,1,.3,1)
+        .15s
+        both;
 }
 
+
 article h1::before {
-    content: "DEVELOPER NOTEBOOK";
+
+    content:
+        "DEVELOPER NOTEBOOK";
 
     display: block;
 
     margin-bottom: 12px;
 
-    color: var(--orange);
+    color:
+        var(--orange);
 
     font-family:
         'JetBrains Mono',
@@ -506,6 +658,12 @@ article h1::before {
     font-weight: 600;
 
     letter-spacing: .2em;
+
+    animation:
+        labelIn
+        .7s
+        ease
+        both;
 }
 
 
@@ -514,6 +672,7 @@ article h1::before {
 ========================================================= */
 
 article h3 {
+
     display: flex;
 
     align-items: center;
@@ -523,47 +682,81 @@ article h3 {
     margin:
         42px 0 14px;
 
-    color: var(--text);
+    color:
+        var(--text);
 
     font-size: 19px;
 
     font-weight: 700;
 
     letter-spacing: -.025em;
+
+    animation:
+        headingIn
+        .7s
+        cubic-bezier(.16,1,.3,1)
+        both;
 }
 
+
 article h3::before {
+
     content: "";
 
     width: 8px;
+
     height: 8px;
 
     flex-shrink: 0;
 
     border-radius: 2px;
 
-    background: var(--orange);
+    background:
+        var(--orange);
 
     box-shadow:
-        6px 0 0 var(--blue);
+        6px 0 0
+        var(--blue);
+
+    transition:
+        transform .3s ease;
+}
+
+
+article h3:hover::before {
+
+    transform:
+        translateX(4px)
+        rotate(45deg);
 }
 
 
 /* =========================================================
-   PARAGRAPHS
+   TEXT
 ========================================================= */
 
 article p {
+
     margin:
         0 0 20px;
 
-    color: var(--text-soft);
+    max-width:
+        900px;
 
-    font-size: 15.5px;
+    color:
+        var(--text-soft);
 
-    line-height: 1.85;
+    font-size:
+        15.5px;
 
-    max-width: 900px;
+    line-height:
+        1.85;
+
+    animation:
+        textIn
+        .8s
+        ease
+        both;
 }
 
 
@@ -572,21 +765,29 @@ article p {
 ========================================================= */
 
 article a {
-    color: var(--blue);
 
-    font-weight: 600;
+    color:
+        var(--blue);
 
-    text-decoration: none;
+    font-weight:
+        600;
+
+    text-decoration:
+        none;
 
     border-bottom:
         1px solid
         rgba(8,120,249,.3);
 
-    transition: .2s ease;
+    transition:
+        .2s ease;
 }
 
+
 article a:hover {
-    color: var(--orange);
+
+    color:
+        var(--orange);
 
     border-color:
         var(--orange);
@@ -598,13 +799,16 @@ article a:hover {
 ========================================================= */
 
 article code {
+
     font-family:
         'JetBrains Mono',
         monospace;
 
-    padding: 3px 7px;
+    padding:
+        3px 7px;
 
-    color: #075fc4;
+    color:
+        #075fc4;
 
     background:
         var(--blue-soft);
@@ -613,9 +817,27 @@ article code {
         1px solid
         #d5e7ff;
 
-    border-radius: 6px;
+    border-radius:
+        6px;
 
-    font-size: 12px;
+    font-size:
+        12px;
+
+    transition:
+        .2s ease;
+}
+
+
+article code:hover {
+
+    background:
+        var(--orange-soft);
+
+    color:
+        var(--orange);
+
+    border-color:
+        #ffd2bb;
 }
 
 
@@ -625,25 +847,44 @@ article code {
 
 article ul,
 article ol {
-    margin: 22px 0;
 
-    padding-left: 28px;
+    margin:
+        22px 0;
 
-    max-width: 900px;
+    padding-left:
+        28px;
+
+    max-width:
+        900px;
 }
+
 
 article li {
-    margin-bottom: 10px;
 
-    color: var(--text-soft);
+    margin-bottom:
+        10px;
 
-    line-height: 1.7;
+    color:
+        var(--text-soft);
+
+    line-height:
+        1.7;
+
+    animation:
+        listIn
+        .6s
+        ease
+        both;
 }
 
-article li::marker {
-    color: var(--orange);
 
-    font-weight: 700;
+article li::marker {
+
+    color:
+        var(--orange);
+
+    font-weight:
+        700;
 }
 
 
@@ -652,11 +893,15 @@ article li::marker {
 ========================================================= */
 
 article img {
-    display: block;
 
-    max-width: 100%;
+    display:
+        block;
 
-    height: auto;
+    max-width:
+        100%;
+
+    height:
+        auto;
 
     margin:
         30px 0 40px;
@@ -665,18 +910,30 @@ article img {
         1px solid
         var(--border);
 
-    border-radius: 18px;
+    border-radius:
+        18px;
 
     box-shadow:
         var(--shadow-medium);
 
+    animation:
+        imageIn
+        1s
+        cubic-bezier(.16,1,.3,1)
+        .2s
+        both;
+
     transition:
-        .3s ease;
+        transform .35s ease,
+        box-shadow .35s ease;
 }
 
+
 article img:hover {
+
     transform:
-        translateY(-5px);
+        translateY(-7px)
+        scale(1.015);
 
     box-shadow:
         0 25px 60px
@@ -685,48 +942,13 @@ article img:hover {
 
 
 /* =========================================================
-   BLOCKQUOTE
-========================================================= */
-
-blockquote {
-    max-width: 900px;
-
-    margin:
-        35px 0;
-
-    padding:
-        22px 25px;
-
-    color: var(--text-soft);
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--orange-soft),
-            var(--blue-soft)
-        );
-
-    border:
-        1px solid
-        var(--border);
-
-    border-left:
-        4px solid
-        var(--orange);
-
-    border-radius:
-        0 14px 14px 0;
-
-    line-height: 1.75;
-}
-
-
-/* =========================================================
    PROJECT CARDS
 ========================================================= */
 
 .projects {
-    position: relative;
+
+    position:
+        relative;
 
     margin:
         25px 0;
@@ -735,6 +957,7 @@ blockquote {
         28px 30px;
 
     background:
+
         linear-gradient(
             135deg,
             #ffffff,
@@ -751,32 +974,46 @@ blockquote {
     box-shadow:
         var(--shadow-small);
 
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease,
-        border-color .25s ease;
+    overflow:
+        hidden;
 
-    overflow: hidden;
+    animation:
+        cardIn
+        .8s
+        cubic-bezier(.16,1,.3,1)
+        both;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
 }
 
+
 .projects::before {
+
     content: "";
 
-    position: absolute;
+    position:
+        absolute;
 
     left: 0;
+
     top: 0;
 
     width: 4px;
+
     height: 100%;
 
     background:
         var(--gradient);
 }
 
+
 .projects:hover {
+
     transform:
-        translateY(-5px);
+        translateY(-7px);
 
     border-color:
         #cfd5dd;
@@ -785,19 +1022,17 @@ blockquote {
         var(--shadow-medium);
 }
 
+
 .projects h2 {
+
     margin:
         0 0 10px;
 
-    font-size: 23px;
+    font-size:
+        23px;
 
     letter-spacing:
         -.035em;
-}
-
-.projects p {
-    margin-bottom:
-        12px;
 }
 
 
@@ -806,7 +1041,9 @@ blockquote {
 ========================================================= */
 
 pre {
-    position: relative;
+
+    position:
+        relative;
 
     margin:
         28px 0;
@@ -814,7 +1051,8 @@ pre {
     padding:
         25px;
 
-    overflow-x: auto;
+    overflow-x:
+        auto;
 
     color:
         #dce2ea;
@@ -832,13 +1070,22 @@ pre {
     box-shadow:
         0 18px 45px
         rgba(0,0,0,.15);
+
+    animation:
+        codeIn
+        .8s
+        cubic-bezier(.16,1,.3,1)
+        both;
 }
 
+
 pre::before {
+
     content:
         "●  ●  ●";
 
-    display: block;
+    display:
+        block;
 
     margin-bottom:
         20px;
@@ -853,18 +1100,74 @@ pre::before {
         3px;
 }
 
+
 pre code {
-    padding: 0;
 
-    color: inherit;
+    padding:
+        0;
 
-    background: transparent;
+    color:
+        inherit;
 
-    border: none;
+    background:
+        transparent;
 
-    font-size: 13px;
+    border:
+        none;
 
-    line-height: 1.75;
+    font-size:
+        13px;
+
+    line-height:
+        1.75;
+}
+
+
+/* =========================================================
+   BLOCKQUOTE
+========================================================= */
+
+blockquote {
+
+    max-width:
+        900px;
+
+    margin:
+        35px 0;
+
+    padding:
+        22px 25px;
+
+    color:
+        var(--text-soft);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--orange-soft),
+            var(--blue-soft)
+        );
+
+    border:
+        1px solid
+        var(--border);
+
+    border-left:
+        4px solid
+        var(--orange);
+
+    border-radius:
+        0 14px 14px 0;
+
+    line-height:
+        1.75;
+
+    animation:
+        quoteIn
+        .8s
+        cubic-bezier(.16,1,.3,1)
+        both;
 }
 
 
@@ -874,42 +1177,57 @@ pre code {
 
 button,
 .button {
-    display: inline-flex;
 
-    align-items: center;
-    justify-content: center;
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
 
     padding:
         11px 19px;
 
-    color: white;
+    color:
+        white;
 
     background:
         var(--gradient);
 
-    border: none;
+    border:
+        none;
 
-    border-radius: 9px;
+    border-radius:
+        9px;
 
-    font-family: inherit;
+    font-family:
+        inherit;
 
-    font-size: 13px;
+    font-size:
+        13px;
 
-    font-weight: 700;
+    font-weight:
+        700;
 
-    cursor: pointer;
+    cursor:
+        pointer;
 
     box-shadow:
         0 8px 22px
         rgba(8,120,249,.2);
 
-    transition: .2s ease;
+    transition:
+        .2s ease;
 }
+
 
 button:hover,
 .button:hover {
+
     transform:
-        translateY(-2px);
+        translateY(-3px);
 
     box-shadow:
         0 13px 30px
@@ -920,40 +1238,62 @@ button:hover,
 }
 
 
+button:active,
+.button:active {
+
+    transform:
+        translateY(0);
+}
+
+
 /* =========================================================
    FOOTER
 ========================================================= */
 
 footer {
-    position: relative;
 
-    margin-top: 70px;
+    position:
+        relative;
+
+    margin-top:
+        70px;
 
     padding:
         45px 20px;
 
-    text-align: center;
+    text-align:
+        center;
 
     color:
         var(--text-faint);
 
-    font-size: 12px;
+    font-size:
+        12px;
 
     border-top:
         1px solid
         var(--border);
 }
 
+
 footer::before {
+
     content: "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    top: -1px;
-    left: 50%;
+    top:
+        -1px;
 
-    width: 110px;
-    height: 2px;
+    left:
+        50%;
+
+    width:
+        110px;
+
+    height:
+        2px;
 
     transform:
         translateX(-50%);
@@ -964,7 +1304,353 @@ footer::before {
 
 
 /* =========================================================
-   FOCUS
+   ANIMATIONS
+========================================================= */
+
+@keyframes heroTitleIn {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(45px)
+            scale(.96);
+
+        filter:
+            blur(10px);
+    }
+
+    60% {
+
+        opacity: 1;
+
+        filter:
+            blur(0);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter:
+            blur(0);
+    }
+}
+
+
+@keyframes gradientMove {
+
+    0% {
+        background-position:
+            0% 50%;
+    }
+
+    50% {
+        background-position:
+            100% 50%;
+    }
+
+    100% {
+        background-position:
+            0% 50%;
+    }
+}
+
+
+@keyframes subtitleIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+
+        filter:
+            blur(5px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+        filter:
+            blur(0);
+    }
+}
+
+
+@keyframes sectionIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes pageTitleIn {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(.97);
+
+        filter:
+            blur(8px);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter:
+            blur(0);
+    }
+}
+
+
+@keyframes labelIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateX(-15px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+@keyframes headingIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateX(-25px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+@keyframes textIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(12px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes imageIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(.96);
+
+        filter:
+            blur(6px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter:
+            blur(0);
+    }
+}
+
+
+@keyframes cardIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(.98);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes codeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes quoteIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateX(-20px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+@keyframes listIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateX(-10px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+@keyframes navIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-8px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes headerGlow {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+        opacity:
+            .07;
+    }
+
+    50% {
+
+        transform:
+            scale(1.15);
+
+        opacity:
+            .12;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
 ========================================================= */
 
 a:focus-visible,
@@ -983,39 +1669,19 @@ select:focus-visible {
 
 
 /* =========================================================
-   ANIMATION
-========================================================= */
-
-@keyframes heroIn {
-
-    from {
-        opacity: 0;
-
-        transform:
-            translateY(18px);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            translateY(0);
-    }
-}
-
-
-/* =========================================================
    TABLET
 ========================================================= */
 
 @media (max-width: 900px) {
 
     main {
+
         width:
             calc(100% - 24px);
     }
 
     section {
+
         padding:
             45px 35px;
     }
@@ -1029,6 +1695,7 @@ select:focus-visible {
 @media (max-width: 700px) {
 
     header {
+
         min-height:
             330px;
 
@@ -1037,22 +1704,28 @@ select:focus-visible {
     }
 
     header h1 {
+
         font-size:
             43px;
     }
 
     header p {
+
         font-size:
             14px;
     }
 
     nav ul {
-        gap: 2px;
 
-        padding: 7px;
+        gap:
+            2px;
+
+        padding:
+            7px;
     }
 
     nav li a {
+
         padding:
             8px 10px;
 
@@ -1061,11 +1734,13 @@ select:focus-visible {
     }
 
     main {
+
         width:
             calc(100% - 14px);
     }
 
     section {
+
         margin:
             20px 0;
 
@@ -1077,16 +1752,19 @@ select:focus-visible {
     }
 
     article h1 {
+
         font-size:
             31px;
     }
 
     article h3 {
+
         font-size:
             17px;
     }
 
     article p {
+
         font-size:
             15px;
 
@@ -1095,6 +1773,7 @@ select:focus-visible {
     }
 
     article img {
+
         margin-left:
             auto;
 
@@ -1103,11 +1782,13 @@ select:focus-visible {
     }
 
     .projects {
+
         padding:
             24px 22px;
     }
 
     pre {
+
         padding:
             18px;
     }
@@ -1121,11 +1802,13 @@ select:focus-visible {
 @media (max-width: 420px) {
 
     header h1 {
+
         font-size:
             37px;
     }
 
     nav li a {
+
         padding:
             7px 8px;
 
@@ -1134,6 +1817,7 @@ select:focus-visible {
     }
 
     section {
+
         padding:
             27px 17px;
     }
@@ -1147,6 +1831,7 @@ select:focus-visible {
 @media (prefers-reduced-motion: reduce) {
 
     html {
+
         scroll-behavior:
             auto;
     }
@@ -1154,6 +1839,7 @@ select:focus-visible {
     *,
     *::before,
     *::after {
+
         animation:
             none !important;
 
