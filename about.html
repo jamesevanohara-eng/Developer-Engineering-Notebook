@@ -12,107 +12,830 @@
 
 <body>
 
-<header>
-    <h1>Developer Engineering Notebook</h1>
-    <p>Meet the developer behind the projects.</p>
-</header>
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <!-- Mobile / menu icon -->
+            <button class="menu-toggle"
+                    type="button"
+                    aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="header-title">
+                <p class="eyebrow">DEVELOPER ENGINEERING NOTEBOOK</p>
+                <h1>About Me</h1>
+            </div>
+
+            <div class="header-status">
+                <span class="status-dot"></span>
+                <span>Building & Learning</span>
+            </div>
+
+        </div>
+
+    </header>
 
 
-<nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="ai-log.html">AI Log</a></li>
-        <li><a href="journal.html">Journal</a></li>
-    </ul>
-</nav>
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav class="main-nav" aria-label="Main navigation">
+
+        <div class="nav-inner">
+
+            <a href="index.html">
+                <span class="nav-number">01</span>
+                Home
+            </a>
+
+            <a href="about.html" class="active">
+                <span class="nav-number">02</span>
+                About Me
+            </a>
+
+            <a href="projects.html">
+                <span class="nav-number">03</span>
+                Projects
+            </a>
+
+            <a href="ai-log.html">
+                <span class="nav-number">04</span>
+                AI Log
+            </a>
+
+            <a href="journal.html">
+                <span class="nav-number">05</span>
+                Journal
+            </a>
+
+        </div>
+
+    </nav>
 
 
-<main>
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
 
-    <section>
+    <main class="about-page">
 
-        <article>
+        <!-- =========================
+             HERO / INTRO
+        ========================== -->
 
-            <h1>About Me</h1>
+        <section class="about-hero">
 
-            <img src="images/IMG_0804.jpeg"
-                 alt="Picture of James O'Hara"
-                 width="300">
+            <div class="hero-content">
+
+                <p class="section-label">
+                    <span class="label-line"></span>
+                    PROFILE / 01
+                </p>
+
+                <h2>
+                    Hi, I'm
+                    <span class="accent-text">James O'Hara.</span>
+                </h2>
+
+                <p class="hero-description">
+                    A student developer interested in software,
+                    engineering, technology, and turning ideas into
+                    things that actually work.
+                </p>
+
+                <div class="hero-tags">
+
+                    <span class="tag">Software Development</span>
+                    <span class="tag">Engineering</span>
+                    <span class="tag">Technology</span>
+
+                </div>
+
+            </div>
 
 
-            <h3>Who I Am</h3>
+            <div class="hero-stat">
 
-            <p>
-                I'm James O'Hara, a junior interested in software
-                development, engineering, and technology. Outside
-                of school, I enjoy running, rock climbing, and chess.
+                <span class="stat-number">01</span>
+
+                <div>
+                    <strong>Currently</strong>
+                    <p>Learning • Building • Improving</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT / IMAGE
+        ========================== -->
+
+        <section class="about-grid">
+
+            <!-- Text column -->
+
+            <article class="about-intro">
+
+                <div class="section-heading">
+
+                    <span class="section-index">02</span>
+
+                    <div>
+                        <p class="section-label">
+                            WHO I AM
+                        </p>
+
+                        <h2>
+                            More than
+                            <span class="accent-text">code.</span>
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <p class="large-text">
+                    I'm James O'Hara, a student interested in software
+                    development, engineering, and technology.
+                </p>
+
+                <p>
+                    I like learning how things work and then using that
+                    knowledge to create something of my own. Software is
+                    especially interesting to me because an idea can start
+                    as a few lines of code and eventually become something
+                    people can actually use.
+                </p>
+
+                <p>
+                    Outside of school and programming, I spend time running,
+                    rock climbing, and playing chess. Those interests have
+                    taught me a lot about consistency, problem solving,
+                    patience, and improving through practice.
+                </p>
+
+            </article>
+
+
+            <!-- Image column -->
+
+            <aside class="about-image">
+
+                <div class="image-frame">
+
+                    <div class="image-corner corner-top-left"></div>
+                    <div class="image-corner corner-top-right"></div>
+                    <div class="image-corner corner-bottom-left"></div>
+                    <div class="image-corner corner-bottom-right"></div>
+
+                    <img
+                        src="images/IMG_0804.jpeg"
+                        alt="Picture of James O'Hara"
+                    >
+
+                    <div class="image-overlay">
+
+                        <span>JAMES O'HARA</span>
+
+                        <span>DEV / STUDENT</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="image-caption">
+
+                    <span class="caption-number">IMG_01</span>
+
+                    <p>
+                        The person behind the projects.
+                    </p>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+
+        <!-- =========================
+             INTEREST STRIP
+        ========================== -->
+
+        <section class="interest-strip">
+
+            <div class="interest-item">
+
+                <span class="interest-number">01</span>
+
+                <div>
+                    <span class="interest-title">RUNNING</span>
+                    <p>Discipline • Endurance • Progress</p>
+                </div>
+
+            </div>
+
+
+            <div class="interest-item">
+
+                <span class="interest-number">02</span>
+
+                <div>
+                    <span class="interest-title">CLIMBING</span>
+                    <p>Strength • Problem Solving • Focus</p>
+                </div>
+
+            </div>
+
+
+            <div class="interest-item">
+
+                <span class="interest-number">03</span>
+
+                <div>
+                    <span class="interest-title">CHESS</span>
+                    <p>Strategy • Patience • Logic</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SOFTWARE INTEREST
+        ========================== -->
+
+        <section class="content-section software-section">
+
+            <div class="section-heading">
+
+                <span class="section-index">03</span>
+
+                <div>
+
+                    <p class="section-label">
+                        SOFTWARE DEVELOPMENT
+                    </p>
+
+                    <h2>
+                        Turning ideas into
+                        <span class="accent-text">
+                            working software.
+                        </span>
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="two-column-content">
+
+                <div>
+
+                    <p class="large-text">
+                        What I enjoy most about programming is taking
+                        something that only exists as an idea and making
+                        it real.
+                    </p>
+
+                    <p>
+                        I'm interested in going beyond small assignments
+                        and learning how larger applications are designed,
+                        developed, tested, and improved.
+                    </p>
+
+                    <p>
+                        My goal isn't just to make code that works.
+                        I want to understand <em>why</em> it works and
+                        become better at building software that is clean,
+                        useful, and maintainable.
+                    </p>
+
+                </div>
+
+
+                <!-- Skills panel -->
+
+                <div class="skills-panel">
+
+                    <div class="panel-header">
+
+                        <span>TECH STACK</span>
+
+                        <span class="panel-symbol">+</span>
+
+                    </div>
+
+
+                    <div class="skill">
+
+                        <div class="skill-top">
+
+                            <span>Java</span>
+                            <span>PRIMARY</span>
+
+                        </div>
+
+                        <div class="skill-bar">
+                            <span style="--progress: 88%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="skill">
+
+                        <div class="skill-top">
+
+                            <span>JavaScript</span>
+                            <span>LEARNING</span>
+
+                        </div>
+
+                        <div class="skill-bar">
+                            <span style="--progress: 72%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="skill">
+
+                        <div class="skill-top">
+
+                            <span>HTML / CSS</span>
+                            <span>BUILDING</span>
+
+                        </div>
+
+                        <div class="skill-bar">
+                            <span style="--progress: 82%;"></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROGRAMMING EXPERIENCE
+        ========================== -->
+
+        <section class="content-section experience-section">
+
+            <div class="section-heading">
+
+                <span class="section-index">04</span>
+
+                <div>
+
+                    <p class="section-label">
+                        EXPERIENCE
+                    </p>
+
+                    <h2>
+                        Where I've
+                        <span class="accent-text">
+                            been building.
+                        </span>
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="experience-grid">
+
+                <article class="experience-card">
+
+                    <span class="card-number">01</span>
+
+                    <div class="card-icon">
+                        &lt;/&gt;
+                    </div>
+
+                    <h3>Computer Science</h3>
+
+                    <p>
+                        I've taken AP Computer Science Principles
+                        and AP Computer Science A while developing
+                        experience with programming fundamentals
+                        and problem solving.
+                    </p>
+
+                    <div class="card-footer">
+                        <span>JAVA</span>
+                        <span>PROGRAMMING</span>
+                    </div>
+
+                </article>
+
+
+                <article class="experience-card featured-card">
+
+                    <span class="card-number">02</span>
+
+                    <div class="card-icon">
+                        { }
+                    </div>
+
+                    <h3>Web Development</h3>
+
+                    <p>
+                        I'm developing my HTML, CSS, and JavaScript
+                        skills by building this engineering notebook
+                        and experimenting with interactive web design.
+                    </p>
+
+                    <div class="card-footer">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JS</span>
+                    </div>
+
+                </article>
+
+
+                <article class="experience-card">
+
+                    <span class="card-number">03</span>
+
+                    <div class="card-icon">
+                        &gt;_
+                    </div>
+
+                    <h3>Problem Solving</h3>
+
+                    <p>
+                        Programming has taught me to break large
+                        problems into smaller pieces and keep testing
+                        ideas until I find something that works.
+                    </p>
+
+                    <div class="card-footer">
+                        <span>LOGIC</span>
+                        <span>DEBUGGING</span>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             HACKATHON
+        ========================== -->
+
+        <section class="hackathon-section">
+
+            <div class="hackathon-number">
+                05
+            </div>
+
+
+            <div class="hackathon-content">
+
+                <p class="section-label">
+                    FEATURED EXPERIENCE
+                </p>
+
+                <h2>
+                    Hackathon
+                    <span class="accent-text">Winner.</span>
+                </h2>
+
+                <p class="hackathon-description">
+                    Last school year, I participated in a hackathon
+                    with my team where we won the beginner category.
+                </p>
+
+                <p>
+                    The experience taught me how important teamwork,
+                    communication, rapid problem solving, and adapting
+                    under pressure are when building something in a
+                    limited amount of time.
+                </p>
+
+
+                <div class="achievement-badge">
+
+                    <span class="badge-icon">★</span>
+
+                    <div>
+
+                        <strong>BEGINNER CATEGORY</strong>
+
+                        <span>HACKATHON WINNER</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hackathon-decoration">
+
+                <span>BUILD</span>
+                <span>TEST</span>
+                <span>ITERATE</span>
+                <span>WIN</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             OUTSIDE THE SCREEN
+        ========================== -->
+
+        <section class="content-section hobbies-section">
+
+            <div class="section-heading">
+
+                <span class="section-index">06</span>
+
+                <div>
+
+                    <p class="section-label">
+                        OUTSIDE THE SCREEN
+                    </p>
+
+                    <h2>
+                        The things that
+                        <span class="accent-text">
+                            keep me moving.
+                        </span>
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="hobby-grid">
+
+                <article class="hobby-card">
+
+                    <div class="hobby-top">
+                        <span class="hobby-number">01</span>
+                        <span class="hobby-symbol">RUN</span>
+                    </div>
+
+                    <h3>Running</h3>
+
+                    <p>
+                        Training has taught me that progress usually
+                        comes from showing up consistently rather than
+                        looking for instant results.
+                    </p>
+
+                </article>
+
+
+                <article class="hobby-card">
+
+                    <div class="hobby-top">
+                        <span class="hobby-number">02</span>
+                        <span class="hobby-symbol">CLIMB</span>
+                    </div>
+
+                    <h3>Rock Climbing</h3>
+
+                    <p>
+                        Climbing combines physical strength with
+                        technical problem solving and requires patience
+                        when a route doesn't work the first time.
+                    </p>
+
+                </article>
+
+
+                <article class="hobby-card">
+
+                    <div class="hobby-top">
+                        <span class="hobby-number">03</span>
+                        <span class="hobby-symbol">CHESS</span>
+                    </div>
+
+                    <h3>Chess</h3>
+
+                    <p>
+                        Chess gives me another way to think strategically,
+                        recognize patterns, and plan several steps ahead.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             GOALS / FUTURE
+        ========================== -->
+
+        <section class="future-section">
+
+            <div class="future-header">
+
+                <p class="section-label">
+                    07 / WHAT'S NEXT
+                </p>
+
+                <h2>
+                    Still
+                    <span class="accent-text">building.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="future-layout">
+
+                <div class="future-intro">
+
+                    <p class="large-text">
+                        I'm not trying to become a better programmer
+                        by simply writing more code.
+                    </p>
+
+                    <p>
+                        I'm working toward understanding the systems
+                        behind what I build, learning from mistakes,
+                        and becoming more capable with every project.
+                    </p>
+
+                </div>
+
+
+                <div class="goal-list">
+
+                    <article class="goal-item">
+
+                        <span class="goal-index">01</span>
+
+                        <div>
+                            <h3>Build Real Projects</h3>
+                            <p>
+                                Move beyond small assignments and create
+                                larger projects that solve actual problems.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="goal-item">
+
+                        <span class="goal-index">02</span>
+
+                        <div>
+                            <h3>Learn Through Mistakes</h3>
+                            <p>
+                                Treat bugs, failed ideas, and difficult
+                                problems as part of the development process.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="goal-item">
+
+                        <span class="goal-index">03</span>
+
+                        <div>
+                            <h3>Understand the Code</h3>
+                            <p>
+                                Focus on understanding the systems I create
+                                instead of only making the final result work.
+                            </p>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FINAL STATEMENT
+        ========================== -->
+
+        <section class="about-finale">
+
+            <div class="finale-line"></div>
+
+            <p class="section-label">
+                END OF PROFILE
             </p>
 
+            <h2>
+                Keep learning.
+                <br>
+                Keep building.
+                <br>
+                <span class="accent-text">Keep improving.</span>
+            </h2>
 
-            <h3>My Interest in Software</h3>
+            <div class="finale-meta">
 
-            <p>
-                I enjoy software development because it allows me
-                to take an idea and turn it into something that
-                actually works. I want to move beyond small
-                assignments and learn how to build larger projects.
-            </p>
+                <span>JAMES O'HARA</span>
 
+                <span>DEVELOPER ENGINEERING NOTEBOOK</span>
 
-            <h3>Programming Experience</h3>
+                <span>2026</span>
 
-            <p>
-                I've taken AP Computer Science Principles and
-                AP Computer Science A. I've worked with
-                <code>Java</code> and <code>JavaScript</code>,
-                with Java currently being my favorite.
-            </p>
+            </div>
 
+        </section>
 
-            <h3>Hackathon Experience</h3>
-
-            <p>
-                Last school year, I participated in a hackathon
-                with my team. We won the beginner category.
-                The experience taught me how to work with others,
-                solve problems quickly, and build under pressure.
-            </p>
+    </main>
 
 
-            <h3>Outside the Screen</h3>
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
-            <ul>
-                <li>Running</li>
-                <li>Rock climbing</li>
-                <li>Chess</li>
-            </ul>
+    <footer class="site-footer">
 
+        <div class="footer-top">
 
-            <h3>What I'm Working Toward</h3>
+            <div>
 
-            <p>
-                I'm working toward becoming a better programmer
-                by building real projects, learning from mistakes,
-                and understanding the code I write rather than
-                simply making something that works.
-            </p>
+                <p class="footer-brand">
+                    Developer Engineering Notebook
+                </p>
 
-        </article>
+                <p>
+                    A record of what I'm learning,
+                    building, and improving.
+                </p>
 
-    </section>
-
-</main>
+            </div>
 
 
-<footer>
-    <p>Developer Engineering Notebook</p>
-    <p id="date-time"></p>
-</footer>
+            <div class="footer-links">
+
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="ai-log.html">AI Log</a>
+                <a href="journal.html">Journal</a>
+
+            </div>
+
+        </div>
 
 
-<script src="js/script.js"></script>
+        <div class="footer-bottom">
+
+            <span>
+                &copy; 2026 James O'Hara
+            </span>
+
+            <span id="date-time"></span>
+
+            <span>
+                DE / 02
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="js/script.js"></script>
 
 </body>
 
