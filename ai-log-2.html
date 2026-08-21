@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,101 +61,214 @@
             <h3>Goal</h3>
 
             <p>
-                My goal was to improve the design of my About Me
-                page and make it look more modern while keeping
-                the overall style consistent with the rest of
-                my website.
+                My goal was to use AI to improve the design and layout
+                of my About Me page while keeping it consistent with
+                the rest of my website.
             </p>
 
 
             <h3>What I Asked AI</h3>
 
-            <p>
-                I asked AI to help redesign my About Me page,
-                particularly the layout, image placement, spacing,
-                colors, and overall visual appearance.
-            </p>
-
-
-            <h3>My Prompt</h3>
+            <p><strong>Prompt:</strong></p>
 
             <blockquote>
-                Revamp my About Me page and make it look more
-                modern and polished. Keep the style consistent
-                with the other pages of my website. Make the
-                image smaller and aligned on the right instead
-                of taking up too much space. Improve the layout,
-                spacing, colors, and overall design while keeping
-                the page easy to read.
+                Revamp this About Me page. Better, but once again the
+                photo isn't aligned just focus on that for now. Like
+                I said I don't like how different sections are
+                separated. For instance keep the style similar to the
+                other pages, here's an example.
             </blockquote>
+
+            <p>
+                I then provided AI with my existing About Me HTML and
+                an example of another page from my website.
+            </p>
 
 
             <h3>AI Response</h3>
 
-            <p>
-                AI provided an updated version of my HTML and CSS
-                that reorganized the About Me section and changed
-                the image placement. The image was moved to the
-                right side of the content and reduced in size.
-                AI also suggested improvements to spacing,
-                backgrounds, borders, typography, and other
-                visual elements so the page looked more
-                professional.
-            </p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+
+    &lt;title&gt;About Me | Developer Engineering Notebook&lt;/title&gt;
+
+    &lt;link rel="stylesheet" href="css/styles.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;header&gt;
+
+    &lt;h1&gt;Developer Engineering Notebook&lt;/h1&gt;
+
+    &lt;p&gt;Meet the developer behind the projects.&lt;/p&gt;
+
+&lt;/header&gt;
+
+
+&lt;nav&gt;
+
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="about.html"&gt;About Me&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="projects.html"&gt;Projects&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="ai-log.html"&gt;AI Log&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="journal.html"&gt;Journal&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+&lt;/nav&gt;
+
+
+&lt;main&gt;
+
+    &lt;section&gt;
+
+        &lt;article&gt;
+
+            &lt;h1&gt;About Me&lt;/h1&gt;
+
+
+            &lt;!-- Intro + Photo --&gt;
+
+            &lt;div class="about-intro"&gt;
+
+                &lt;div class="about-text"&gt;
+
+                    &lt;h3&gt;Who I Am&lt;/h3&gt;
+
+                    &lt;p&gt;
+                        I'm James O'Hara, a student interested in software
+                        development, engineering, and technology. Outside
+                        of school, I enjoy running, rock climbing, and chess.
+                    &lt;/p&gt;
+
+                &lt;/div&gt;
+
+
+                &lt;div class="about-photo"&gt;
+
+                    &lt;img
+                        src="images/IMG_0804.jpeg"
+                        alt="Picture of James O'Hara"
+                    &gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+
+            &lt;h3&gt;My Interest in Software&lt;/h3&gt;
+
+            &lt;p&gt;
+                I enjoy software development because it allows me
+                to take an idea and turn it into something that
+                actually works. I want to move beyond small
+                assignments and learn how to build larger projects.
+            &lt;/p&gt;
+
+
+            &lt;h3&gt;Programming Experience&lt;/h3&gt;
+
+            &lt;p&gt;
+                I've taken AP Computer Science Principles and
+                AP Computer Science A. I've worked with
+                &lt;code&gt;Java&lt;/code&gt; and &lt;code&gt;JavaScript&lt;/code&gt;,
+                with Java currently being my favorite.
+            &lt;/p&gt;
+
+
+            &lt;h3&gt;Hackathon Experience&lt;/h3&gt;
+
+            &lt;p&gt;
+                Last school year, I participated in a hackathon
+                with my team. We won the beginner category.
+                The experience taught me how to work with others,
+                solve problems quickly, and build under pressure.
+            &lt;/p&gt;
+
+
+            &lt;h3&gt;Outside the Screen&lt;/h3&gt;
+
+            &lt;ul&gt;
+                &lt;li&gt;Running&lt;/li&gt;
+                &lt;li&gt;Rock climbing&lt;/li&gt;
+                &lt;li&gt;Chess&lt;/li&gt;
+            &lt;/ul&gt;
+
+
+            &lt;h3&gt;What I'm Working Toward&lt;/h3&gt;
+
+            &lt;p&gt;
+                I'm working toward becoming a better programmer
+                by building real projects, learning from mistakes,
+                and understanding the code I write rather than
+                simply making something that works.
+            &lt;/p&gt;
+
+        &lt;/article&gt;
+
+    &lt;/section&gt;
+
+&lt;/main&gt;
+
+
+&lt;footer&gt;
+
+    &lt;p&gt;Developer Engineering Notebook&lt;/p&gt;
+
+    &lt;p id="date-time"&gt;&lt;/p&gt;
+
+&lt;/footer&gt;
+
+
+&lt;script src="js/script.js"&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
 
 
             <h3>What I Actually Did</h3>
 
             <p>
-                I used the suggested code as a starting point and
-                added it to my website. I tested the page and
-                adjusted the design when parts of the layout did
-                not look the way I wanted. I specifically focused
-                on making the image smaller and properly aligned
-                with the rest of the content.
+                I used the AI-generated code to update my About Me page
+                and tested the changes on my website. I specifically
+                focused on improving the photo's alignment and making
+                the different sections fit together more naturally.
             </p>
 
 
             <h3>Was the AI Correct?</h3>
 
             <p>
-                Mostly. The code worked, but some of the visual
-                changes did not initially match what I wanted.
-                I had to give AI additional instructions about
-                the image position, size, and how the different
-                sections should fit together.
+                The code was mostly correct and gave me a good starting
+                point. However, I had to continue giving AI feedback
+                because the image alignment and spacing were not exactly
+                what I wanted at first.
             </p>
 
 
             <h3>What I Learned</h3>
 
             <p>
-                I learned that AI-generated code may work
-                technically while still not matching the design
-                I have in mind. Giving specific instructions and
-                testing the result is important when using AI for
-                web development.
+                I learned that AI can quickly generate and reorganize
+                HTML, but I still need to test the result and explain
+                what I want changed. Small design details such as image
+                alignment and spacing can require multiple revisions.
             </p>
 
 
             <h3>My Takeaway</h3>
 
             <blockquote>
-                AI can help me redesign and improve my website,
-                but I still need to evaluate the result and
-                communicate exactly what I want changed.
+                AI can help me build and improve a website much faster,
+                but I still need to evaluate the code and make sure the
+                final result matches my goals.
             </blockquote>
-
-
-            <h3>Next AI Experiment</h3>
-
-            <p>
-                My next experiment will be using AI to help me
-                add more JavaScript interactions to my website.
-                I want to understand how the JavaScript works
-                instead of relying entirely on AI to write it
-                for me.
-            </p>
 
         </article>
 
@@ -190,5 +302,3 @@
 </body>
 
 </html>
-```
-
