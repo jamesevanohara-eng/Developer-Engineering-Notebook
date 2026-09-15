@@ -18,6 +18,7 @@
         Development logs, experiments, progress, and lessons
         from my journey through software development.
     </p>
+    <h2 id="greeting"></h2>
 </header>
 
 
@@ -28,6 +29,12 @@
         <li><a href="projects.html">Projects</a></li>
         <li><a href="ai-log.html">AI Log</a></li>
         <li><a href="journal.html">Journal</a></li>
+        <li><a href="skills.html">Skills</a></li>
+
+        <li>
+    <button id="theme-toggle" type="button">☀ Light</button>
+</li>
+
     </ul>
 </nav>
 
@@ -125,21 +132,184 @@
                 <li>Continue documenting my development process.</li>
             </ol>
 
+            <h3>Entry 02</h3>
+
+    <h2>Design and Layout</h2>
+
+    <p>
+        <strong>Week 2</strong> · August 15–21
+    </p>
+    <h3>Objective</h3>
+
+            <p>
+                The primary objective for the first week was to
+                establish the foundation for my Developer Engineering
+                Notebook. This included setting up GitHub and
+                creating the file and folder structure for the site.
+            </p>
+
+
+            <h3>Work Completed</h3>
+
+            <ul>
+                <li>Created my GitHub account.</li>
+                <li>Created the project repository.</li>
+                <li>Set up the project folders.</li>
+                <li>Created the initial HTML pages.</li>
+                <li>Created the CSS and JavaScript files.</li>
+                <li>Started building the website structure.</li>
+            </ul>
+
+
+            <h3>What I Learned</h3>
+
+            <p>
+                I learned how important it is to establish a clean
+                project structure before beginning development.
+                Organizing files correctly makes the project easier
+                to navigate and gives me a better foundation for
+                adding new features later.
+            </p>
+
+
+            <h3>Challenges</h3>
+
+            <p>
+                One of the first challenges was understanding how
+                the different files connect to each other. HTML,
+                CSS, JavaScript, and images all need to be referenced
+                correctly for the website to work as intended.
+            </p>
+
+
+            <h3>Reflection</h3>
+
+            <blockquote>
+                Every large project starts with a small structure.
+                Getting the foundation right makes everything that
+                comes after it easier.
+            </blockquote>
+
+            <p>
+                This first week was mainly about getting everything
+                organized and creating a starting point. Going
+                forward, I want to focus less on simply making the
+                website work and more on making it well designed,
+                organized, and useful.
+            </p>
+
+
+            <h3>Next Steps</h3>
+
+            <ol>
+                <li>Continue improving the website design.</li>
+                <li>Add more detailed project documentation.</li>
+                <li>Experiment with JavaScript features.</li>
+                <li>Continue documenting my development process.</li>
+            </ol>
+
+            <h2>Light and Dark Mode</h2>
+<h3>Entry 03</h3>
+
+<h2>Light and Dark Mode</h2>
+
+<p>
+    <strong>Week 3</strong> · September 5–11
+</p>
+
+<h3>Objective</h3>
+
+<p>
+    The primary objective for this week was to improve the usability
+    and appearance of my Developer Engineering Notebook by adding
+    a light and dark mode feature. I wanted users to be able to
+    switch between different visual themes while also making sure
+    their selected theme remained active when navigating between
+    pages.
+</p>
+
+<h3>Work Completed</h3>
+
+<ul>
+    <li>Added a light and dark mode toggle to the navigation.</li>
+    <li>Used JavaScript to switch between the two themes.</li>
+    <li>Used localStorage to save the user's selected theme.</li>
+    <li>Updated the CSS to create a separate light-mode design.</li>
+    <li>Tested the theme across multiple pages.</li>
+    <li>Fixed issues where the theme would reset when changing pages.</li>
+    <li>Adjusted the header, navigation, sections, and other elements to work with light mode.</li>
+</ul>
+
+<h3>What I Learned</h3>
+
+<p>
+    I learned how JavaScript can be used to change the appearance
+    of a website dynamically. I also learned how localStorage can
+    save information in the browser so that a user's preferences
+    can remain active when they move between different pages.
+    This helped me understand how HTML, CSS, and JavaScript can
+    work together to create a more interactive website.
+</p>
+
+<h3>Challenges</h3>
+
+<p>
+    One of the biggest challenges was making the selected theme
+    remain active after navigating to another page. The theme
+    initially worked on one page but would reset when another page
+    loaded. I had to use localStorage and make sure that every page
+    loaded the same JavaScript file so the saved theme could be
+    applied consistently.
+</p>
+
+<h3>Reflection</h3>
+
+<blockquote>
+    A feature is not finished just because it works once. It needs
+    to work consistently throughout the entire application.
+</blockquote>
+
+<p>
+    Adding light and dark mode showed me that developing a website
+    involves more than just making individual features work. I also
+    need to think about how different parts of the website interact
+    with each other. Testing the feature across multiple pages helped
+    me identify problems that I would not have noticed by only testing
+    the home page.
+</p>
+
+<h3>Next Steps</h3>
+
+<ol>
+    <li>Improve the Projects page with project cards.</li>
+    <li>Add JavaScript project filtering.</li>
+    <li>Add another interactive feature to the Projects page.</li>
+    <li>Continue improving the website's overall usability.</li>
+</ol>
+
+    
+
+
         </article>
 
     </section>
 
+    
+
 </main>
 
-
 <footer>
+
     <p>Developer Engineering Notebook</p>
-    <p id="date-time"></p>
+
+    <p>Today's Date:</p>
+
+    <p id="date"></p>
+
 </footer>
 
 
-<script src="js/script.js"></script>
-
+<script src="javascript/script.js"></script>
 </body>
 
 </html>
