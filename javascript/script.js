@@ -1,149 +1,138 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () { 
+ 
+    /* ========================= 
+       DATE 
+    ========================= */ 
+ 
+    const today = new Date(); 
+ 
+    const dateElement = document.getElementById("date"); 
+ 
+    if (dateElement) { 
+        dateElement.textContent = today.toDateString(); 
+    } 
+ 
+ 
+    /* ========================= 
+       THEME 
+    ========================= */ 
+ 
+    const themeToggle = document.getElementById("theme-toggle"); 
+ 
+    // Get the saved theme 
+    const savedTheme = localStorage.getItem("theme"); 
+ 
+    // Apply saved theme 
+    if (savedTheme === "light") { 
+        document.body.classList.add("light-mode"); 
+    } 
+ 
+ 
+    /* ========================= 
+       THEME BUTTON 
+    ========================= */ 
+ 
+    if (themeToggle) { 
+ 
+        function updateThemeButton() { 
+ 
+            if (document.body.classList.contains("light-mode")) { 
+                themeToggle.textContent = "Cosmos ☀️"; 
+            } else { 
+                themeToggle.textContent = "Luna 🌙"; 
+            } 
+ 
+        } 
+ 
+ 
+        // Set button text when page loads 
+        updateThemeButton(); 
+ 
+ 
+        // Change theme when clicked 
+        themeToggle.addEventListener("click", function () { 
+ 
+            const isLight = 
+                document.body.classList.contains("light-mode"); 
+ 
+            if (isLight) { 
+ 
+                document.body.classList.remove("light-mode"); 
+ 
+                localStorage.setItem("theme", "dark"); 
+ 
+            } else { 
+ 
+                document.body.classList.add("light-mode"); 
+ 
+                localStorage.setItem("theme", "light"); 
+ 
+            } 
+ 
+            updateThemeButton(); 
+ 
+        }); 
+ 
+    } 
+ 
+}); 
 
-    /* =========================
-       DATE
-    ========================= */
 
-    const today = new Date();
-
-    const dateElement = document.getElementById("date");
-
-    if (dateElement) {
-        dateElement.textContent = today.toDateString();
-    }
-
-
-    /* =========================
-       GREETING
-    ========================= */
-
-    const greeting = document.getElementById("greeting");
-
-    if (greeting) {
-
-        const hour = new Date().getHours();
-
-        if (hour < 12) {
-            greeting.textContent = "Good morning!";
-        } else if (hour < 18) {
-            greeting.textContent = "Good afternoon!";
-        } else {
-            greeting.textContent = "Good evening!";
-        }
-
-    }
+const greeting = document.getElementById("greeting"); 
+ 
+const hour = new Date().getHours(); 
+ 
+if (hour < 12) { 
+    greeting.textContent = "Good morning!"; 
+} else if (hour < 18) { 
+    greeting.textContent = "Good afternoon!"; 
+} else { 
+    greeting.textContent = "Good evening!"; 
+}
 
 
-    /* =========================
-       THEME
-    ========================= */
+/* =========================
+   PROJECT FILTERING
+========================= */
 
-    const themeToggle = document.getElementById("theme-toggle");
+const filterButtons =
+    document.querySelectorAll(".filter-button");
 
-    // Get the saved theme
-    const savedTheme = localStorage.getItem("theme");
-
-    // Apply saved theme
-    if (savedTheme === "light") {
-        document.body.classList.add("light-mode");
-    }
+const projectCards =
+    document.querySelectorAll(".projects");
 
 
-    /* =========================
-       THEME BUTTON
-    ========================= */
+filterButtons.forEach(function (button) {
 
-    if (themeToggle) {
+    button.addEventListener("click", function () {
 
-        function updateThemeButton() {
+        const filter = button.dataset.filter;
 
-            if (document.body.classList.contains("light-mode")) {
-                themeToggle.textContent = "Cosmos ☀️";
+
+        filterButtons.forEach(function (btn) {
+            btn.classList.remove("active");
+        });
+
+
+        button.classList.add("active");
+
+
+        projectCards.forEach(function (project) {
+
+            const category = project.dataset.category;
+
+            if (filter === "all" || category === filter) {
+
+                project.style.display = "";
+
             } else {
-                themeToggle.textContent = "Luna 🌙";
-            }
 
-        }
-
-
-        // Set button text when page loads
-        updateThemeButton();
-
-
-        // Change theme when clicked
-        themeToggle.addEventListener("click", function () {
-
-            const isLight =
-                document.body.classList.contains("light-mode");
-
-            if (isLight) {
-
-                document.body.classList.remove("light-mode");
-
-                localStorage.setItem("theme", "dark");
-
-            } else {
-
-                document.body.classList.add("light-mode");
-
-                localStorage.setItem("theme", "light");
+                project.style.display = "none";
 
             }
-
-            updateThemeButton();
 
         });
 
-    }
-
-
-    /* =========================
-       PROJECT FILTERING
-    ========================= */
-
-    const filterButtons =
-        document.querySelectorAll(".filter-button");
-
-    const projectCards =
-        document.querySelectorAll(".projects");
-
-
-    filterButtons.forEach(function (button) {
-
-        button.addEventListener("click", function () {
-
-            const filter = button.dataset.filter;
-
-
-            // Remove active from all buttons
-            filterButtons.forEach(function (btn) {
-                btn.classList.remove("active");
-            });
-
-
-            // Make clicked button active
-            button.classList.add("active");
-
-
-            // Show or hide projects
-            projectCards.forEach(function (project) {
-
-                const category = project.dataset.category;
-
-                if (filter === "all" || category === filter) {
-
-                    project.style.display = "";
-
-                } else {
-
-                    project.style.display = "none";
-
-                }
-
-            });
-
-        });
-
-    }
+    });
 
 });
