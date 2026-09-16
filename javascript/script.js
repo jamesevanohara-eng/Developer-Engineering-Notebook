@@ -14,6 +14,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================
+       GREETING
+    ========================= */
+
+    const greeting = document.getElementById("greeting");
+
+    if (greeting) {
+
+        const hour = new Date().getHours();
+
+        if (hour < 12) {
+            greeting.textContent = "Good morning!";
+        } else if (hour < 18) {
+            greeting.textContent = "Good afternoon!";
+        } else {
+            greeting.textContent = "Good evening!";
+        }
+
+    }
+
+
+    /* =========================
        THEME
     ========================= */
 
@@ -75,15 +96,54 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+
+    /* =========================
+       PROJECT FILTERING
+    ========================= */
+
+    const filterButtons =
+        document.querySelectorAll(".filter-button");
+
+    const projectCards =
+        document.querySelectorAll(".projects");
+
+
+    filterButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const filter = button.dataset.filter;
+
+
+            // Remove active from all buttons
+            filterButtons.forEach(function (btn) {
+                btn.classList.remove("active");
+            });
+
+
+            // Make clicked button active
+            button.classList.add("active");
+
+
+            // Show or hide projects
+            projectCards.forEach(function (project) {
+
+                const category = project.dataset.category;
+
+                if (filter === "all" || category === filter) {
+
+                    project.style.display = "";
+
+                } else {
+
+                    project.style.display = "none";
+
+                }
+
+            });
+
+        });
+
+    }
+
 });
-const greeting = document.getElementById("greeting");
-
-const hour = new Date().getHours();
-
-if (hour < 12) {
-    greeting.textContent = "Good morning!";
-} else if (hour < 18) {
-    greeting.textContent = "Good afternoon!";
-} else {
-    greeting.textContent = "Good evening!";
-}
