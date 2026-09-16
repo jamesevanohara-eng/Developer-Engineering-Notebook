@@ -3759,3 +3759,67 @@ body.light-mode .projects:hover {
         0 15px 35px rgba(0, 0, 0, 0.35),
         0 0 25px rgba(255, 216, 77, 0.12);
 }
+/* =========================
+   AURORA COLOR OVERRIDES
+========================= */
+
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3 {
+    color: var(--purple);
+}
+
+body.light-mode a {
+    color: var(--purple);
+}
+
+body.light-mode a:hover {
+    color: var(--yellow);
+}
+
+body.light-mode .project-card,
+body.light-mode .projects {
+    border-color: #625a6e;
+}
+
+body.light-mode .project-card:hover,
+body.light-mode .projects:hover {
+    border-color: var(--yellow);
+}
+
+body.light-mode .filter-button.active {
+    color: #1c1820;
+    background: var(--yellow);
+    border-color: var(--yellow);
+}
+
+body.light-mode .details-button {
+    color: var(--purple);
+    border-color: var(--purple);
+}
+
+body.light-mode .details-button:hover {
+    color: #1c1820;
+    background: var(--yellow);
+    border-color: var(--yellow);
+}
+
+body.light-mode .modal-content {
+    border-color: var(--yellow);
+}
+
+body.light-mode .modal-content h2 {
+    color: var(--purple);
+}
+
+body.light-mode .modal-close:hover {
+    color: var(--yellow);
+}
+
+body.light-mode #greeting {
+    color: var(--purple);
+}
+
+body.light-mode::before {
+    opacity: 0.45;
+}
