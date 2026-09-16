@@ -3823,3 +3823,252 @@ body.light-mode #greeting {
 body.light-mode::before {
     opacity: 0.45;
 }
+/* =========================================================
+   AURORA — FINAL COLOR OVERRIDES
+========================================================= */
+
+body.light-mode {
+
+    --orange: #a970ff;
+    --orange-2: #c49aff;
+    --orange-3: #d0a8ff;
+
+    --blue: #ffd84d;
+    --blue-2: #ffe68a;
+    --blue-3: #ffe98f;
+
+    --gradient:
+        linear-gradient(
+            135deg,
+            #a970ff,
+            #ffd84d
+        );
+
+    --orange-soft: rgba(169, 112, 255, 0.12);
+    --blue-soft: rgba(255, 216, 77, 0.12);
+
+    --orange-glow:
+        0 0 25px rgba(169, 112, 255, 0.20);
+
+    --blue-glow:
+        0 0 25px rgba(255, 216, 77, 0.18);
+}
+
+
+/* Header */
+
+body.light-mode header {
+    background:
+        radial-gradient(
+            circle at 15% 35%,
+            rgba(169, 112, 255, 0.28),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(255, 216, 77, 0.20),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #302b3b,
+            #37332d
+        );
+}
+
+
+/* Header title */
+
+body.light-mode header h1 {
+    background:
+        linear-gradient(
+            110deg,
+            #ffffff,
+            #d0a8ff,
+            #ffffff,
+            #ffe98f,
+            #ffffff
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+/* Main grid */
+
+body.light-mode main::after {
+    background:
+        radial-gradient(
+            circle,
+            rgba(169, 112, 255, 0.06),
+            transparent 70%
+        );
+}
+
+
+/* Section gradient */
+
+body.light-mode section::before {
+    background: var(--gradient);
+}
+
+
+/* Section corner */
+
+body.light-mode section::after {
+    border-color: #a970ff;
+    border-right-color: #ffd84d;
+}
+
+
+/* Project cards */
+
+body.light-mode .projects::before {
+    background: var(--gradient);
+}
+
+body.light-mode .projects::after {
+    border-top-color: rgba(255, 216, 77, 0.6);
+    border-right-color: rgba(169, 112, 255, 0.6);
+}
+
+
+/* AI cards */
+
+body.light-mode .ai-entry::before {
+    background: var(--gradient);
+}
+
+body.light-mode .ai-entry::after {
+    border-top-color: rgba(255, 216, 77, 0.5);
+    border-right-color: rgba(169, 112, 255, 0.5);
+}
+
+
+/* Navigation */
+
+body.light-mode nav::before {
+    background: var(--gradient);
+}
+
+body.light-mode nav li a:hover {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(169,112,255,.16),
+            rgba(255,216,77,.12)
+        );
+}
+
+
+/* Headings */
+
+body.light-mode article h1::after {
+    background: var(--gradient);
+}
+
+body.light-mode article h3::before {
+    background: #a970ff;
+    box-shadow:
+        7px 0 0 #ffd84d;
+}
+
+
+/* Links */
+
+body.light-mode article a:hover {
+    color: #ffd84d;
+}
+
+
+/* Blockquotes */
+
+body.light-mode blockquote {
+    border-left-color: #a970ff;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(169,112,255,.09),
+            rgba(255,216,77,.09)
+        );
+}
+
+
+/* Footer */
+
+body.light-mode footer::before {
+    background: var(--gradient);
+}
+
+
+/* Buttons */
+
+body.light-mode button:not(#theme-toggle) {
+    background: var(--gradient);
+}
+
+body.light-mode button:not(#theme-toggle):hover {
+    background: #ffd84d;
+}
+
+
+/* Filter buttons */
+
+body.light-mode .filter-button:hover {
+    border-color: #a970ff;
+}
+
+body.light-mode .filter-button.active {
+    color: #1c1820;
+    background: #ffd84d;
+    border-color: #ffd84d;
+}
+
+
+/* Page buttons */
+
+body.light-mode .page-button {
+    background: var(--gradient);
+}
+
+body.light-mode .page-button:hover {
+    background: #ffd84d;
+    border-color: #ffd84d;
+}
+
+
+/* Status badges */
+
+body.light-mode .projects p:last-child {
+    background: rgba(169,112,255,.12);
+    border-color: rgba(169,112,255,.25);
+    color: #d0a8ff;
+}
+
+
+/* Greeting */
+
+body.light-mode #greeting {
+    color: #ffd84d;
+
+    text-shadow:
+        2px 2px 0 rgba(0,0,0,.35),
+        0 0 18px rgba(255,216,77,.35);
+}
+
+
+/* Scrollbar */
+
+body.light-mode::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        #a970ff,
+        #ffd84d
+    );
+}
+
+body.light-mode::-webkit-scrollbar-thumb:hover {
+    background: #ffd84d;
+}
