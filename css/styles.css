@@ -4532,3 +4532,31 @@ body.light-mode button:focus-visible {
     outline-color:
         rgba(169,112,255,.45);
 }
+/* =========================================================
+   AURORA — AI LOG CARDS
+========================================================= */
+
+body.light-mode .ai-entry {
+    background:
+        linear-gradient(
+            145deg,
+            #45404f,
+            #393640
+        );
+
+    border-color:
+        #625a6e;
+
+    box-shadow:
+        0 16px 45px rgba(0, 0, 0, 0.28);
+}
+
+body.light-mode .ai-entry-header {
+    border-bottom-color:
+        rgba(255, 255, 255, 0.10);
+}
+
+body.light-mode .ai-entry-header p {
+    color:
+        #b8b1c2;
+}
