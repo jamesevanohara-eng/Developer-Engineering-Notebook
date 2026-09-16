@@ -134,5 +134,36 @@ filterButtons.forEach(function (button) {
         });
 
     });
+     /* =========================
+       PROJECT EXPAND / COLLAPSE
+    ========================= */
+
+    const expandButtons =
+        document.querySelectorAll(".expand-button");
+
+
+    expandButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const projectMore =
+                button.previousElementSibling;
+
+            projectMore.classList.toggle("visible");
+
+
+            if (projectMore.classList.contains("visible")) {
+
+                button.textContent = "Show Less";
+
+            } else {
+
+                button.textContent = "Show More";
+
+            }
+
+        });
+
+    });
 
 });
